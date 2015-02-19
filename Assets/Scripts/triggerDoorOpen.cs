@@ -16,10 +16,6 @@ public class triggerDoorOpen : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other){
 		Debug.Log ("collision is detected");
-		if(other.gameObject.tag == "OVRPlayerController"){
-			Debug.Log ("the door should open NOW");
-			door.animation.Play("Take 001");
-			
-		}
+		door.animation.Play("Take 001");
 	}
 }
