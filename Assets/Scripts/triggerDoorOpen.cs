@@ -9,7 +9,7 @@ public class triggerDoorOpen : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-		audioManager = audio.GetComponent<NeurosisAudioManager> ();
+		//audioManager = audio.GetComponent<NeurosisAudioManager> ();
 	}
 	
 	// Update is called once per frame
@@ -18,8 +18,9 @@ public class triggerDoorOpen : MonoBehaviour {
 	}
 
 	void OnTriggerEnter (Collider other){
-		audioManager.Play (1);
+		//audioManager.Play (1);
 		Debug.Log ("collision is detected");
+		print("Detected collision between " + gameObject.name + " and " + other.collider.name);
 		door.animation.Play("Take 001");
 	}
 }
