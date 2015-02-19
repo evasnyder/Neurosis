@@ -1,15 +1,25 @@
 fileFormatVersion: 2
-guid: 11e4c56c0e29343568a7c97b44b51252
+guid: 494cd9b6f54494ad79889e3d26f1ad4d
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Plant
-    6400000: //RootNode
+    100000: Door
+    100002: //RootNode
+    100004: DoorFrame
+    400000: Door
+    400002: //RootNode
+    400004: DoorFrame
+    2300000: Door
+    2300002: DoorFrame
+    3300000: Door
+    3300002: DoorFrame
+    4300000: DoorFrame
+    4300002: Door
+    6400000: Door
+    6400002: DoorFrame
+    7400000: Take 001
     9500000: //RootNode
+    11100000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -47,7 +57,7 @@ ModelImporter:
     splitTangentsAcrossUV: 1
     normalImportMode: 0
     tangentImportMode: 1
-  importAnimation: 0
+  importAnimation: 1
   copyAvatar: 0
   humanDescription:
     human: []
@@ -61,6 +71,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
