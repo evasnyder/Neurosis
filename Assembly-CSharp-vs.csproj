@@ -63,6 +63,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
      <Compile Include="Assets\Scripts\DoorHit.cs" />
+     <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
