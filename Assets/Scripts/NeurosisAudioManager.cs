@@ -44,7 +44,7 @@ public class NeurosisAudioManager : MonoBehaviour {
 	}
 	
 	public void Play(int i){
-		Debug.Log ("play");
+		//Debug.Log ("play");
 		audioSourceArray[i].Play ();
 		
 	}
