@@ -5,7 +5,7 @@ public class CameraCollide : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+		Debug.Log ("start");
 	}
 	
 	// Update is called once per frame
