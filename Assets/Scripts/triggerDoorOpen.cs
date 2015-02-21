@@ -10,6 +10,7 @@ public class triggerDoorOpen : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//audioManager = audio.GetComponent<NeurosisAudioManager> ();
+
 	}
 	
 	// Update is called once per frame

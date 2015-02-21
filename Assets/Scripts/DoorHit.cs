@@ -14,7 +14,7 @@ public class DoorHit : MonoBehaviour {
 	void Update () {
 	
 	}
-
+	
 	void OnTriggerEnter(Collider other){
 		Debug.Log ("it is hit");
 		scare.transform.position = new Vector3 (camera.transform.position.x + 1, camera.transform.position.y + 1, camera.transform.position.z);
