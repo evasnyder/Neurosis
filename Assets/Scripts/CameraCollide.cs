@@ -26,5 +26,13 @@ public class CameraCollide : MonoBehaviour {
 			jumpScares.Appear();
 			ScareHappens = true;
 		}
+
+		if (gameObject.name == "Frame02" && info.collider.name == "OVRPlayerController") {
+			Invoke("Knocking",1.0f);
+		}
 	}
+//
+//	void Knocking(){
+//		audio.Play ();
+//	}
 }
