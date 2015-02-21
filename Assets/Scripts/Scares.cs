@@ -19,7 +19,7 @@ public class Scares : MonoBehaviour {
 	public void Appear(){
 		girl.SetActive (true);
 	
-		Invoke ("Dissapear",1.0f);
+		Invoke ("Dissapear",.6f);
 		
 	}
 
