@@ -22,6 +22,9 @@ ModelImporter:
     4300000: StairWall
     4300002: Stairs
     4300004: Railing
+    6400000: Railing
+    6400002: Stairs
+    6400004: StairWall
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -44,7 +47,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: .00999999978
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importBlendShapes: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
