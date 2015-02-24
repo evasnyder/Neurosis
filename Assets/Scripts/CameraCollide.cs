@@ -24,7 +24,6 @@ public class CameraCollide : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("start");
 
 		//initiallizing jumpScares to be of type SCARES.CS 
 		jumpScares = scares.GetComponent<Scares> ();
@@ -41,7 +40,7 @@ public class CameraCollide : MonoBehaviour {
 
 		//if the object that was collided with was the desk and what collided with it 
 		//was the player 
-		if (gameObject.name == "Desk" && info.collider.name == "OVRPlayerController") {
+		if ((gameObject.name == "Desk" && info.collider.name == "OVRPlayerController") || ( gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController" )) {
 			Debug.Log("boo");
 
 			//call Appear from JUMPSCARES.CS to make the scary object appear 

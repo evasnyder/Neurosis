@@ -25,7 +25,7 @@ public class Scares : MonoBehaviour {
 	public void Appear(){
 		//	make the little girl appear 
 		girl.SetActive (true);
-	
+			
 		//invoke the Dissapear() method below after .6 seconds 
 		Invoke ("Dissapear",.6f);
 		
