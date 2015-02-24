@@ -13,7 +13,7 @@ public class Letter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print ("Update");
+		//print ("Update");
 		if (Input.GetKeyDown (KeyCode.Return)) { 
 			print ("ENTER");
 			if(lookLetter) { 
