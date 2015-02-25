@@ -92,6 +92,7 @@ public class OVRPlayerController : MonoBehaviour
 	private bool  HaltUpdateMovement = false;
 	private bool prevHatLeft = false;
 	private bool prevHatRight = false;
+	private bool runBool = false; 
 	private float SimulationRate = 60f;
 
 	void Awake()
@@ -232,15 +233,27 @@ public class OVRPlayerController : MonoBehaviour
 		ortEuler.z = ortEuler.x = 0f;
 		ort = Quaternion.Euler(ortEuler);
 
-		if (moveForward)
+		if (moveForward) {
+			if(Input.GetKeyDown (KeyCode.Slash)) { 
+				print ("RUN");
+				Acceleration = 4.5f;
+				print ("Acceleration= " + Acceleration);
+			} 
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward);
-		if (moveBack)
+			Acceleration = .1f;
+		} 
+		if (moveBack) {
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * BackAndSideDampen * Vector3.back);
-		if (moveLeft)
+			Acceleration = .1f;
+		} 
+		if (moveLeft) { 
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.left);
-		if (moveRight)
+			Acceleration = .1f;
+		} 
+		if (moveRight) { 
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
-
+			Acceleration = .1f;
+		} 
 		bool curHatLeft = OVRGamepadController.GPC_GetButton(OVRGamepadController.Button.LeftShoulder);
 
 		Vector3 euler = transform.rotation.eulerAngles;
@@ -295,6 +308,17 @@ public class OVRPlayerController : MonoBehaviour
 		euler.y += rightAxisX * rotateInfluence;
 
 		transform.rotation = Quaternion.Euler(euler);
+
+		//|| Input.GetKeyDown (KeyCode.DownArrow) || Input.GetKeyDown (KeyCode.RightArrow) || Input.GetKeyDown (KeyCode.LeftArrow) ) ) { 
+//		if(Input.GetKeyDown (KeyCode.Slash))  { 
+//			runBool = true; 
+//			run();
+//		} 
+//
+//		if (Input.GetKeyUp (KeyCode.Slash)) { 
+//			runBool=false; 
+//			Acceleration = .1f;
+//		} 
 	}
 
 	/// <summary>
@@ -401,5 +425,10 @@ public class OVRPlayerController : MonoBehaviour
 		euler.y = YRotation;
 		transform.rotation = Quaternion.Euler(euler);
 	}
+
+	public void run() 
+	{ 
+		Acceleration = 1f; 
+	} 
 }
 
