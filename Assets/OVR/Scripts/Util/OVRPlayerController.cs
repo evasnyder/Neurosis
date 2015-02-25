@@ -237,12 +237,12 @@ public class OVRPlayerController : MonoBehaviour
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
 				print ("RUN");
 				runBool = true;
-				Acceleration = 1.5f;
+				Acceleration = 1.0f;
 				print ("Acceleration= " + Acceleration);
 			}
 			if(Input.GetKeyUp(KeyCode.Slash)) { 
 				print ("Back To Normal" ); 
-				Acceleration = .1f; 
+				Acceleration = .2f; 
 			} 
 
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward);
