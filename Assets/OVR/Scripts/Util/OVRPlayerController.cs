@@ -234,30 +234,63 @@ public class OVRPlayerController : MonoBehaviour
 		ort = Quaternion.Euler(ortEuler);
 
 		if (moveForward) {
+			//if you've pressed slash 
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
 				print ("RUN");
-				runBool = true;
+				//change the acceleration 
 				Acceleration = 1.0f;
 				print ("Acceleration= " + Acceleration);
 			}
+			//if the key has been released 
 			if(Input.GetKeyUp(KeyCode.Slash)) { 
 				print ("Back To Normal" ); 
 				Acceleration = .2f; 
 			} 
-
+			///move :) 
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward);
 		} 
 		if (moveBack) {
+			if(Input.GetKeyDown (KeyCode.Slash)) { 
+				print ("RUN");
+				//change the acceleration 
+				Acceleration = 1.0f;
+				print ("Acceleration= " + Acceleration);
+			}
+			//if the key has been released 
+			if(Input.GetKeyUp(KeyCode.Slash)) { 
+				print ("Back To Normal" ); 
+				Acceleration = .2f; 
+			}
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * BackAndSideDampen * Vector3.back);
-			Acceleration = .1f;
 		} 
 		if (moveLeft) { 
+			if(Input.GetKeyDown (KeyCode.Slash)) { 
+				print ("RUN");
+				//change the acceleration 
+				Acceleration = 1.0f;
+				print ("Acceleration= " + Acceleration);
+			}
+			//if the key has been released 
+			if(Input.GetKeyUp(KeyCode.Slash)) { 
+				print ("Back To Normal" ); 
+				Acceleration = .2f; 
+			}
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.left);
-			Acceleration = .1f;
+
 		} 
 		if (moveRight) { 
+			if(Input.GetKeyDown (KeyCode.Slash)) { 
+				print ("RUN");
+				//change the acceleration 
+				Acceleration = 1.0f;
+				print ("Acceleration= " + Acceleration);
+			}
+			//if the key has been released 
+			if(Input.GetKeyUp(KeyCode.Slash)) { 
+				print ("Back To Normal" ); 
+				Acceleration = .2f; 
+			}
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
-			Acceleration = .1f;
 		} 
 		bool curHatLeft = OVRGamepadController.GPC_GetButton(OVRGamepadController.Button.LeftShoulder);
 
