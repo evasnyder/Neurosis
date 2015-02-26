@@ -70,7 +70,7 @@
      <Compile Include="Assets\Scripts\Run.cs" />
      <Compile Include="Assets\Scripts\Scares.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />
-     <Compile Include="Assets\Scripts\testCollision.cs" />
+     <Compile Include="Assets\Scripts\firstDoorToOpen.cs" />
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
