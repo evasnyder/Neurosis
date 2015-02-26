@@ -234,21 +234,19 @@ public class OVRPlayerController : MonoBehaviour
 		ort = Quaternion.Euler(ortEuler);
 
 		if (moveForward) {
-			//if you've pressed slash // 
+//			//if you've pressed slash // 
 			if (Input.GetKeyDown (KeyCode.Slash)) { 
-				if (OVRGamepadController.GPC_GetButton (OVRGamepadController.Button.A)) { 
 					print ("RUN"); //change the acceleration 
 					Acceleration = 1.0f;
 					print ("Acceleration= " + Acceleration); 
 				} 
-				//if the key has been released 
+//				//if the key has been released 
 				if (Input.GetKeyUp (KeyCode.Slash)) { 
 					print ("Back To Normal"); 
 					Acceleration = .2f; 
 				}
 				///move :) 
-				MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward);
-			} 
+				MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward); 
 		}
 		if (moveBack) {
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
