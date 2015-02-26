@@ -18,10 +18,18 @@ public class triggerDoorOpen : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter (Collider other){
+	IEnumerator OnTriggerEnter (Collider other){
 		audioManager.Play (1);
 		Debug.Log ("collision is detected");
 		print("Detected collision between " + gameObject.name + " and " + other.collider.name);
+		print("open door");
+		door.animation["Take 001"].speed = 1;
+		door.animation.Play("Take 001");
+		
+		yield return new WaitForSeconds(5);
+		
+		print("close door");
+		door.animation["Take 001"].speed = -1;    
 		door.animation.Play("Take 001");
 	}
 }
