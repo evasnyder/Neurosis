@@ -80,7 +80,7 @@ public class OVRGamepadController : MonoBehaviour
 	/// </summary>
     public static string[] DefaultButtonNames = new string[(int)Button.Max]
 	{
-		"Button A",
+		"A",
 		"Button B",
 		"Button X",
 		"Button Y",
