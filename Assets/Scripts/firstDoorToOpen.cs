@@ -30,7 +30,6 @@ public class firstDoorToOpen : MonoBehaviour {
 		door.animation["Take 001"].speed = 1;
 		door.animation.Play("Take 001");
 		fogOn = true;
-
 		yield return new WaitForSeconds(5);
 
 
