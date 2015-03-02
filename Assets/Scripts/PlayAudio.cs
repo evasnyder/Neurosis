@@ -18,10 +18,6 @@ public class PlayAudio : MonoBehaviour {
 	//	getting cameraCollide scipt 
 	CameraCollide cameraCollide;
     
-		//HANNAH WORKING ON KNOCKING	
-//    public float waitTime = 3.0f;
-//    public bool knocked = true;
-    
     // Use this for initialization
     void Start () {
 		//	setting the audioManager to type NeurosisAudioManager
@@ -68,8 +64,5 @@ public class PlayAudio : MonoBehaviour {
 		}
     }
     
-//    void Knocking(){
-//            audioManager.Play (6);
-//     
-//	}
+
 }
