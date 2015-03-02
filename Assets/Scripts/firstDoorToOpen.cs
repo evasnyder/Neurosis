@@ -8,6 +8,8 @@ public class firstDoorToOpen : MonoBehaviour {
 	NeurosisAudioManager audioManager;
 	private bool fogOn;
 	private int counter = 0;
+
+	public bool doorHit = false; //used for knocking.cs(audio)
 	
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,7 @@ public class firstDoorToOpen : MonoBehaviour {
 	
 	IEnumerator OnTriggerEnter (Collider other){
 		audioManager.Play (1);
+		doorHit = true;
 		print("open door");
 		door.animation["Take 001"].speed = 1;
 		door.animation.Play("Take 001");
