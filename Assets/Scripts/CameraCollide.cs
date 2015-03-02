@@ -21,7 +21,6 @@ public class CameraCollide : MonoBehaviour {
 	 * */ 
 	Scares jumpScares; 
 
-
 	// Use this for initialization
 	void Start () {
 		if (hasScares) {
@@ -38,16 +37,14 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerEnter(Collider info)
 	{
-		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
-
+			print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+		
 		//if the object that was collided with was the desk and what collided with it 
 		//was the player 
 		if ((gameObject.name == "Desk" && info.collider.name == "OVRPlayerController") || (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController")) {
-			Debug.Log ("boo");
 
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
 			jumpScares.Appear ();
-
 			//set the boolean equal to true which is used to play the scary audio along 
 			//with the girl appearing
 			deskScareHappens = true;
@@ -56,8 +53,7 @@ public class CameraCollide : MonoBehaviour {
 			StartCoroutine (respawn (info)); 
 		}
 		/*	//KEEP THIS.  HANNAH IS WORKING ON GETTING THE KNOCKING WORKING WHEN YOU HIT FRAME02 (aka fred.)
-		if (gameObject.name == "Frame02" && info.collider.name == "OVRPlayerController") {
-
+		if (gameObject.name == "Frame02" && info.collider.name == "OVRPlayerController") 
 			
 			Invoke ("Knocking", 1.0f);
 		}
@@ -68,6 +64,7 @@ public class CameraCollide : MonoBehaviour {
 	}
 	*/
 	}
+
 
 	IEnumerator respawn(Collider toRespawn){
 		renderer.enabled = false;

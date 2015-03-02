@@ -1,9 +1,10 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/OVR/Scripts/Util/OVRPlayerController.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraCollide.cs">
     <Files>
-      <File FileName="Assets/OVR/Scripts/Util/OVRPlayerController.cs" Line="245" Column="17" />
-      <File FileName="Assets/OVR/Scripts/Util/OVRGamepadController.cs" Line="88" Column="6" />
+      <File FileName="Assets/Scripts/triggerDoorOpen.cs" Line="5" Column="25" />
+      <File FileName="Assets/Scripts/triggerDoubleDoors.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/CameraCollide.cs" Line="51" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

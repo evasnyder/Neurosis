@@ -64,6 +64,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
      <Compile Include="Assets\Scripts\CameraCollide.cs" />
      <Compile Include="Assets\Scripts\DoorHit.cs" />
+     <Compile Include="Assets\Scripts\Knocking.cs" />
      <Compile Include="Assets\Scripts\Letter.cs" />
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
@@ -71,7 +72,9 @@
      <Compile Include="Assets\Scripts\Scares.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />
      <Compile Include="Assets\Scripts\firstDoorToOpen.cs" />
+     <Compile Include="Assets\Scripts\movingWall.cs" />
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
+     <Compile Include="Assets\Scripts\triggerDoubleDoors.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />
