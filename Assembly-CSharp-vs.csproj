@@ -64,7 +64,6 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
      <Compile Include="Assets\Scripts\CameraCollide.cs" />
      <Compile Include="Assets\Scripts\DoorHit.cs" />
-     <Compile Include="Assets\Scripts\Knocking.cs" />
      <Compile Include="Assets\Scripts\Letter.cs" />
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
@@ -82,7 +81,7 @@
      <None Include="Assets\OVR\Shaders\OVRGUIShader.shader" />
      <None Include="Assets\Plugins\x86\donotdelete.txt" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>/Users/aidazhumabekova/Documents/Neurosis/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>/Users/evasnyder/Documents/Spring2015/cs307/Neurosis/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/4.6.2/UnityEngine.UI.dll</HintPath>
