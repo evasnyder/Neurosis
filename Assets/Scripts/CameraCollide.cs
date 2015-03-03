@@ -21,6 +21,9 @@ public class CameraCollide : MonoBehaviour {
 	 * */ 
 	Scares jumpScares; 
 
+	//public GameObject note;
+	//public GameObject player;
+
 	// Use this for initialization
 	void Start () {
 		if (hasScares) {
@@ -44,9 +47,11 @@ public class CameraCollide : MonoBehaviour {
 		if ((gameObject.name == "Desk" && info.collider.name == "OVRPlayerController") || (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController")) {
 
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
-			jumpScares.Appear ();
+			//jumpScares.Appear ();
 			//set the boolean equal to true which is used to play the scary audio along 
 			//with the girl appearing
+			//note.transform.parent = player.transform;
+			//note.transform.position = new Vector3(-.17f, -.498f,.65f);
 			deskScareHappens = true;
 		} else if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
 			print ("player should respawn");
