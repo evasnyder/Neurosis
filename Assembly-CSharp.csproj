@@ -62,8 +62,10 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRScreenFade.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRUGUI.cs" />
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
+     <Compile Include="Assets\PaperPickUp.cs" />
      <Compile Include="Assets\Scripts\CameraCollide.cs" />
      <Compile Include="Assets\Scripts\DoorHit.cs" />
+     <Compile Include="Assets\Scripts\Knocking.cs" />
      <Compile Include="Assets\Scripts\Letter.cs" />
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
