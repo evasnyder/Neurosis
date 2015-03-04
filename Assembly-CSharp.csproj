@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\Scares.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />
      <Compile Include="Assets\Scripts\firstDoorToOpen.cs" />
+     <Compile Include="Assets\Scripts\lightsInRoom1.cs" />
      <Compile Include="Assets\Scripts\movingWall.cs" />
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <Compile Include="Assets\Scripts\triggerDoubleDoors.cs" />
