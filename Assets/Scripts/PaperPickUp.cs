@@ -1,10 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+//Hannah! I am leaving you comments about how I think the lights need to be handled in room1 
+//I can do it, I'm just not sure if this script is done and I don't want to change something
+//and fuck it up...
+
 public class PaperPickUp : MonoBehaviour {
 
 	public GameObject note;
 	public GameObject player;
+	//public GameObject light;
 
 	bool pickedUp = false;
 
@@ -32,6 +38,9 @@ public class PaperPickUp : MonoBehaviour {
 				//new Vector3(-.17f, -.498f,.65f);
 			//	pickedUp = true;
 			//}
+
+			//TURN ONLY ONE LIGHT OFF 
+			//light.intensity = 0.0f; 
 		}
             
 }
