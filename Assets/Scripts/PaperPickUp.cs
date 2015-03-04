@@ -26,7 +26,7 @@ public class PaperPickUp : MonoBehaviour {
 
 	void OnTriggerEnter(Collider info)
 	{
-		print ("woopie!");
+
 		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 
 		if (info.collider.name == "OVRPlayerController") {
