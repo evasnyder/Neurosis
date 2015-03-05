@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
      <Compile Include="Assets\Scripts\PaperPickUp.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
+     <Compile Include="Assets\Scripts\Room1PickUp.cs" />
      <Compile Include="Assets\Scripts\Run.cs" />
      <Compile Include="Assets\Scripts\Scares.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />

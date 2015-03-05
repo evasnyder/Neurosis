@@ -3,7 +3,7 @@ using System.Collections;
 
 public class triggerDoorOpen : MonoBehaviour {
 	public GameObject door;
-
+	public bool playerOpened;
 	public GameObject audio;
 	NeurosisAudioManager audioManager;
     
@@ -18,13 +18,17 @@ public class triggerDoorOpen : MonoBehaviour {
 	
 	}
 
-	IEnumerator OnTriggerEnter (Collider other){
+	void OnTriggerEnter (Collider other){
 		audioManager.Play (1);
+
 		print("open door");
 		door.animation["Take 001"].speed = 1;
 		door.animation.Play("Take 001");
 		
-		yield return new WaitForSeconds(5);
+		//yield return new WaitForSeconds(5);
+
+	}
+	void onTriggerExit(Collider other){
 		
 		print("close door");
 		door.animation["Take 001"].speed = -1;    
