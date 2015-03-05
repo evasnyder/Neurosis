@@ -56,6 +56,7 @@ public class CameraCollide : MonoBehaviour {
 		} else if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
 			print ("player should respawn");
 			StartCoroutine (respawn (info)); 
+			//Destroy (gameObject);
 		}
 		/*	//KEEP THIS.  HANNAH IS WORKING ON GETTING THE KNOCKING WORKING WHEN YOU HIT FRAME02 (aka fred.)
 		if (gameObject.name == "Frame02" && info.collider.name == "OVRPlayerController") 

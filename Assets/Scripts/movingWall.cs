@@ -6,6 +6,7 @@ public class movingWall : MonoBehaviour {
 	private bool triggered;
 	private bool alreadyTriggered;
 	private Vector3 endPosition = new Vector3(15f, 8f, -47.9f);
+	float lockPos = 0;
 
 
 	// Use this for initialization
@@ -17,6 +18,8 @@ public class movingWall : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		wallToMove.transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, lockPos, lockPos);
+
 		if (triggered == true && alreadyTriggered == false)
 		{
 			alreadyTriggered= true;
