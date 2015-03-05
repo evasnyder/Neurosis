@@ -20,6 +20,8 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject appear;
 	//	getting cameraCollide scipt 
 	CameraCollide cameraCollide;
+
+	bool banged = false;
     
     // Use this for initialization
     void Start () {
@@ -29,10 +31,33 @@ public class PlayAudio : MonoBehaviour {
 		cameraCollide = appear.GetComponent<CameraCollide> ();
 		audioManager.SetVolume (11, 0.0f);
 		opener = door.GetComponent<firstDoorToOpen>();
+
     }
     
     // Update is called once per frame
     void Update () {
+
+
+		if (cameraCollide.inHall == true) {
+			Debug.Log ("BOOBS");
+			audioManager.FadeOut (11);
+			audioManager.FadeIn (7);
+			audioManager.FadeIn (8);
+			if (!banged) {
+				audioManager.Play (18);
+				banged = true;
+			}
+		} else {
+			audioManager.SetVolume (7, 0.0f);
+			audioManager.SetVolume (8, 0.0f);
+			audioManager.Play (7);
+			audioManager.Play (8);
+
+		}
+
+
+	
+
 
 		//	play background music - wind and ambiance (spelling...???)
        // audioManager.PlayLoop (8);
@@ -68,11 +93,11 @@ public class PlayAudio : MonoBehaviour {
 		}
 		*/
 
-		if(opener.doorHit){
-			audioManager.PlayLoop(7);
-			audioManager.PlayLoop(8);
+		//if(opener.doorHit){
+		//	audioManager.PlayLoop(7);
+		//	audioManager.PlayLoop(8);
 
-		}
+		//}
     }
     
 

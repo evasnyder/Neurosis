@@ -25,6 +25,9 @@ public class CameraCollide : MonoBehaviour {
 	//public GameObject player;
 
 	// Use this for initialization
+
+	public bool inHall = false;
+
 	void Start () {
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
@@ -57,6 +60,11 @@ public class CameraCollide : MonoBehaviour {
 			print ("player should respawn");
 			StartCoroutine (respawn (info)); 
 			//Destroy (gameObject);
+		}
+
+		if (gameObject.name == "HallTrigger" && info.collider.name == "OVRPlayerController") {
+			inHall = true;
+			Debug.Log ("WEEEE");
 		}
 		/*	//KEEP THIS.  HANNAH IS WORKING ON GETTING THE KNOCKING WORKING WHEN YOU HIT FRAME02 (aka fred.)
 		if (gameObject.name == "Frame02" && info.collider.name == "OVRPlayerController") 

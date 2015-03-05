@@ -88,22 +88,21 @@ public class NeurosisAudioManager : MonoBehaviour {
 		
 	}
 	
-	public void FadeOut(int i){      // bug:cant use this function in update... so where can we use it?
-		while(audioSourceArray[i].volume >=0)
-		{
-			while(timerCountDown>0){
-				timerCountDown -= Time.deltaTime;
-				
-			}
-			audioSourceArray[i].volume-=.2f;
-			timerCountDown=.5f;
+	public void FadeOut(int i){      
+	
+		
+		if (audioSourceArray[i].volume > 0.0f) {
+			audioSourceArray[i].volume -= Time.deltaTime/2;
+			//audioSourceArray [i].volume = audioVolume;
 		}
 	}
 	
 	public void FadeIn(int i){
-		
-	}
-	
+		if (audioSourceArray [i].volume < 1.0f) {
+            audioSourceArray [i].volume += Time.deltaTime/2;
+        }
+    }
+
 	public void CrossFade(int i, int y){
 		
 	}
