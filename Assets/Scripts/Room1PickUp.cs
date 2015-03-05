@@ -47,7 +47,7 @@ public class Room1PickUp : MonoBehaviour {
 		} 
 		
 		if (turnLight2) { 
-			light2.light.intensity = .5f;
+			light2.light.intensity = .2f;
 			print ("Turn Light 2 On");
 			turnLight3 = true; 
 			turnLight2 = false; 
