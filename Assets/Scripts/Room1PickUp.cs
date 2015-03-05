@@ -5,9 +5,10 @@ public class Room1PickUp : MonoBehaviour {
 
 	public GameObject note;
 	public GameObject player;
-	public GameObject light;
+	public GameObject lightTest;
 	//public Light myLight;
 
+	float lightStep = .05f;
 	bool pickedUp = false;
 	
 	// Use this for initialization
@@ -35,9 +36,11 @@ public class Room1PickUp : MonoBehaviour {
 			//	pickedUp = true;
 			//}
 			
-			//TURN ONLY ONE LIGHT OFF 
-			gameObject.light.intensity = 0.0f;
+			//TURN THE LIGHT OFF SLOWLY
+			lightTest.light.intensity -= lightStep * Time.deltaTime;
+			//lightTest.light.intensity = 0.0f;
 			print ("lights off");
+			print ("intensity: " + lightTest.light.intensity);
 		}
 		
 	}
