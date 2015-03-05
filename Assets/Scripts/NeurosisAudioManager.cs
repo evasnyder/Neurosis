@@ -36,6 +36,7 @@ public class NeurosisAudioManager : MonoBehaviour {
 			audioSourceArray [i] = newSource; // puts temp audiosource into aduio array
 			//soundScript = GetComponent<PlayMusic>();
 		}
+		audioSourceArray [11].transform.localPosition = new Vector3 (9.95f, 1.0f, 1.6f);
 	}
 	
 	void Update () {

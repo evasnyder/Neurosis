@@ -67,11 +67,13 @@
      <Compile Include="Assets\Scripts\Knocking.cs" />
      <Compile Include="Assets\Scripts\Letter.cs" />
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
+     <Compile Include="Assets\Scripts\PaperPickUp.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
      <Compile Include="Assets\Scripts\Run.cs" />
      <Compile Include="Assets\Scripts\Scares.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />
      <Compile Include="Assets\Scripts\firstDoorToOpen.cs" />
+     <Compile Include="Assets\Scripts\lightsInRoom1.cs" />
      <Compile Include="Assets\Scripts\movingWall.cs" />
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <Compile Include="Assets\Scripts\triggerDoubleDoors.cs" />
