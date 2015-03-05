@@ -85,7 +85,7 @@ public class Room1PickUp : MonoBehaviour {
                 }
             } 
         }*/
-				//if (lightFlucker > .5f && fuckerCounter <= 0) {
+				//THIS FLICKERS THE LIGHTS :) 
 				if (fuckerCounter <= 0) {
 					print ("lightFlucker > 0");
 					light3.light.intensity -= Time.deltaTime;
