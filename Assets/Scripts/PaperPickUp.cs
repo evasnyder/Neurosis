@@ -12,7 +12,7 @@ public class PaperPickUp : MonoBehaviour {
 	public GameObject player;
 	//public GameObject light;
 
-	bool pickedUp = false;
+	public bool pickedUp = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,7 +36,7 @@ public class PaperPickUp : MonoBehaviour {
 			note.transform.localPosition= new Vector3(.44f,-.498f,.65f);
 
 				//new Vector3(-.17f, -.498f,.65f);
-			//	pickedUp = true;
+				pickedUp = true;
 			//}
 
 			//TURN ONLY ONE LIGHT OFF 

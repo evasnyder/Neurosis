@@ -10,6 +10,9 @@ public class PlayAudio : MonoBehaviour {
 	bool radioOn = false;
 	bool radioHit = false;
 
+	public GameObject door;
+	firstDoorToOpen opener;
+
 	//	this is the gameObject appear which is set to "Desk" in the inspector 
 	// 	because it has to pull out the CameraCollide from whatever object was collided with
 	//	creating an instance of the desk in the code to reach the cameraCollide code associated 
@@ -25,6 +28,7 @@ public class PlayAudio : MonoBehaviour {
 		//	setting the cameraCollide to type CameraCollide 
 		cameraCollide = appear.GetComponent<CameraCollide> ();
 		audioManager.SetVolume (11, 0.0f);
+		opener = door.GetComponent<firstDoorToOpen>();
     }
     
     // Update is called once per frame
@@ -33,16 +37,16 @@ public class PlayAudio : MonoBehaviour {
 		//	play background music - wind and ambiance (spelling...???)
        // audioManager.PlayLoop (8);
         //audioManager.PlayLoop (7);
-		if (radioHit) {
+		//if (radioHit) {
 			audioManager.PlayLoop(11);
-		}
+		//}
 
 //        Knocking ();
         
 		/* 
 		 *  If the camera collides with the desk i.e setting the boolean of deskScareHappens equal to true
 	 	* */ 
-		if (cameraCollide.deskScareHappens == true) {
+	/*	if (cameraCollide.deskScareHappens == true) {
 			if(!radioOn){
 				radioOn = true;
 				radioHit = true;
@@ -60,6 +64,13 @@ public class PlayAudio : MonoBehaviour {
 			//	reset the desk boolean back to false so it can be hit again and the little girl 
 			//	will appear again.
 			cameraCollide.deskScareHappens = false;
+
+		}
+		*/
+
+		if(opener.doorHit){
+			audioManager.PlayLoop(7);
+			audioManager.PlayLoop(8);
 
 		}
     }
