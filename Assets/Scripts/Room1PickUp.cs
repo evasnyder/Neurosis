@@ -60,7 +60,7 @@ public class Room1PickUp : MonoBehaviour {
 
 				float time = Time.deltaTime;
 
-				if(Time.deltaTime > time) { 
+				if(lightFlucker) { 
 					fuckerCounter++;
 					print ("fuckerCounter" + fuckerCounter);
 					lightFlucker = true;
