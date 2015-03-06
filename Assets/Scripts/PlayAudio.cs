@@ -68,11 +68,11 @@ public class PlayAudio : MonoBehaviour {
 		}
 		*/
 
-		if(opener.doorHit){
-			audioManager.PlayLoop(7);
-			audioManager.PlayLoop(8);
+//		if(opener.doorHit){
+		//	audioManager.PlayLoop(7);
+			//audioManager.PlayLoop(8);
 
-		}
+	//	}
     }
     
 
