@@ -11,6 +11,7 @@ public class PaperPickUp : MonoBehaviour {
 	public GameObject note;
 	public GameObject player;
 	//public GameObject light;
+	public GameObject doorLock;
 
 	public bool pickedUp = false;
 
@@ -37,6 +38,7 @@ public class PaperPickUp : MonoBehaviour {
 
 				//new Vector3(-.17f, -.498f,.65f);
 				pickedUp = true;
+			doorLock.SetActive(false);
 			//}
 
 			//TURN ONLY ONE LIGHT OFF 
