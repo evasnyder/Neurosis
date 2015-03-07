@@ -15,6 +15,7 @@ public class Room1PickUp : MonoBehaviour {
 	float thirdLight = 5f;
 	float fucker = 1000;
 	float fuckerCounter = .5f;
+	int girlcounter = 0;
 
 
 	public bool pickedUp = false;
@@ -36,6 +37,7 @@ public class Room1PickUp : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		girl.SetActive (false);
 		if (turnLight1) { 
 			light1.light.intensity -= lightStep * Time.deltaTime;
 			//lightTest.light.intensity = 0.0f;
@@ -60,6 +62,7 @@ public class Room1PickUp : MonoBehaviour {
 			if (thirdLight > 1) { 
 			//	print ("Time Decrease");
 				thirdLight -= Time.deltaTime;
+				girl.SetActive(false);
 			//	print ("ThridLight Time :" + thirdLight);
 			} else { 
 				/*print("Turn Light 3 On");
@@ -93,17 +96,20 @@ public class Room1PickUp : MonoBehaviour {
 					light3.light.intensity -= Time.deltaTime;
 					lightFlucker = light3.light.intensity; 
 					light3.light.intensity = 0.2f;
-					girl.SetActive(true);
+					if(girlcounter < 5) { 
+						girl.SetActive(true);
+						girlcounter++;
+					}
 					fuckerCounter = Random.Range(0, 3);
 				} else {
 				//	print ("turn it back off...");
-					//int random = Random.Range(1, 5);
-					//light3.light.intensity += Time.deltaTime * random;
+//					int random = Random.Range(1, 5);
+//					light3.light.intensity += Time.deltaTime * random;
 					light3.light.intensity = 0.0f; 
 					girl.SetActive(false);
 					lightFlucker = light3.light.intensity; 
 					fuckerCounter -= Time.deltaTime;
-				//	print ("counter" + fuckerCounter);
+					print ("counter" + fuckerCounter);
 				}
 				
 				
@@ -123,6 +129,7 @@ public class Room1PickUp : MonoBehaviour {
 			//note.transform.Translate (player.transform.position.x+1, 0, player.transform.position.z+1); //= 
 			note.transform.localPosition= new Vector3(.44f,-.498f,.65f);
 			turnLight1 = true; 
+			girl.SetActive(false);
 		//	print ("turn 1 light off");
 		}
 		
