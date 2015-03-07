@@ -29,7 +29,7 @@ public class PlayAudio : MonoBehaviour {
         audioManager = audio.GetComponent<NeurosisAudioManager> ();
 		//	setting the cameraCollide to type CameraCollide 
 		cameraCollide = appear.GetComponent<CameraCollide> ();
-		audioManager.SetVolume (11, 0.0f);
+		//audioManager.SetVolume (11, 0.0f);
 		opener = door.GetComponent<firstDoorToOpen>();
 
     }
@@ -38,7 +38,7 @@ public class PlayAudio : MonoBehaviour {
     void Update () {
 
 
-		if (cameraCollide.inHall == true) {
+		/*if (cameraCollide.inHall == true) {
 			Debug.Log ("BOOBS");
 			audioManager.FadeOut (11);
 			audioManager.FadeIn (7);
@@ -54,7 +54,7 @@ public class PlayAudio : MonoBehaviour {
 			audioManager.Play (8);
 
 		}
-
+*/
 
 	
 
