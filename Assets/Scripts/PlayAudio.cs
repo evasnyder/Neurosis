@@ -13,6 +13,13 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject door;
 	firstDoorToOpen opener;
 
+	public GameObject paper;
+	PaperPickUp pickPaper;
+
+	bool banged;
+
+	float knockTime = 2.0f;
+
 	//	this is the gameObject appear which is set to "Desk" in the inspector 
 	// 	because it has to pull out the CameraCollide from whatever object was collided with
 	//	creating an instance of the desk in the code to reach the cameraCollide code associated 
@@ -29,24 +36,43 @@ public class PlayAudio : MonoBehaviour {
 		cameraCollide = appear.GetComponent<CameraCollide> ();
 		audioManager.SetVolume (11, 0.0f);
 		opener = door.GetComponent<firstDoorToOpen>();
+		pickPaper = paper.GetComponent<PaperPickUp>();
     }
     
     // Update is called once per frame
     void Update () {
 
 		//	play background music - wind and ambiance (spelling...???)
-       // audioManager.PlayLoop (8);
-        //audioManager.PlayLoop (7);
+		// audioManager.PlayLoop (8);
+		//audioManager.PlayLoop (7);
 		//if (radioHit) {
-			audioManager.PlayLoop(11);
+		audioManager.PlayLoop (11);
+		audioManager.PlayLoop (8);
 		//}
 
-//        Knocking ();
+        knocking();
         
+		if (cameraCollide.inTheHall == true) {
+            Debug.Log ("BOoo");
+            audioManager.FadeOut (11);
+			audioManager.FadeOut (8);
+            audioManager.FadeIn (7);
+           // audioManager.FadeIn (8);
+            if (!banged) {
+                audioManager.Play (18);
+                banged = true;
+            }
+        } else {
+            audioManager.SetVolume (7, 0.0f);
+            audioManager.SetVolume (8, 0.0f);
+            audioManager.Play (7);
+            audioManager.Play (8);
+
+        }
 		/* 
 		 *  If the camera collides with the desk i.e setting the boolean of deskScareHappens equal to true
 	 	* */ 
-	/*	if (cameraCollide.deskScareHappens == true) {
+		/*	if (cameraCollide.deskScareHappens == true) {
 			if(!radioOn){
 				radioOn = true;
 				radioHit = true;
@@ -59,21 +85,23 @@ public class PlayAudio : MonoBehaviour {
 				Debug.Log ("radoff");
 				audioManager.SetVolume(11,0.0f);
 			}
-			//	play the scary audio that comes with the little girl
-			//audioManager.Play (9);
-			//	reset the desk boolean back to false so it can be hit again and the little girl 
-			//	will appear again.
-			cameraCollide.deskScareHappens = false;
+
+
+    }
+    */
+	}
+    
+void knocking(){
+		if(opener.doorHit == false && pickPaper.pickedUp == true){
+			if(knockTime > 0){
+				knockTime -= Time.deltaTime;
+			}
+			else{
+				audioManager.Play(6);
+				knockTime = 10.0f;
+			}
+		}
+
 
 		}
-		*/
-
-//		if(opener.doorHit){
-		//	audioManager.PlayLoop(7);
-			//audioManager.PlayLoop(8);
-
-	//	}
-    }
-    
-
 }

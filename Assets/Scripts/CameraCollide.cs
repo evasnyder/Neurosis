@@ -6,7 +6,8 @@ public class CameraCollide : MonoBehaviour {
 	public bool hasScares; //if the object has scares to trigger
 	public GameObject scares; //assign scares
 	Scares scareToPerform; //scares to activate
-
+	public GameObject hallBrick;
+	public bool inTheHall = false;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +37,10 @@ public class CameraCollide : MonoBehaviour {
 			StartCoroutine (respawn (info)); 
 			//Destroy (gameObject);
 		}
+		if(gameObject.name == "hallBrick" && info.collider.name == "OVRPlayerController"){ 
+			inTheHall = true;
+			Debug.Log ("halling around");
+		   }
 	}
 
 	void OnTriggerStay(Collider player){

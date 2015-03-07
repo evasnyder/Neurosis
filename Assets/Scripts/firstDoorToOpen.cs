@@ -28,7 +28,7 @@ public class firstDoorToOpen : MonoBehaviour {
 	
 	IEnumerator OnTriggerEnter (Collider other){
 		audioManager.Play (1);
-		Invoke ("DoorSlam", 2.0f);
+		//Invoke ("DoorSlam", 2.0f);
 		doorHit = true;
 		print("open door");
 		door.animation["Take 001"].speed = 1;

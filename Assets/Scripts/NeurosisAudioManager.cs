@@ -37,6 +37,7 @@ public class NeurosisAudioManager : MonoBehaviour {
 			//soundScript = GetComponent<PlayMusic>();
 		}
 		audioSourceArray [11].transform.localPosition = new Vector3 (9.95f, 1.0f, 1.6f);
+		audioSourceArray [6].transform.localPosition = new Vector3 (0.0f,1.82f,-5.95f);
 	}
 	
 	void Update () {
@@ -87,28 +88,29 @@ public class NeurosisAudioManager : MonoBehaviour {
 		
 		
 	}
-	
-	public void FadeOut(int i){      // bug:cant use this function in update... so where can we use it?
-		while(audioSourceArray[i].volume >=0)
-		{
-			while(timerCountDown>0){
-				timerCountDown -= Time.deltaTime;
-				
-			}
-			audioSourceArray[i].volume-=.2f;
-			timerCountDown=.5f;
+
+	public void FadeOut(int i){      
+		
+		
+		if (audioSourceArray[i].volume > 0.0f) {
+			audioSourceArray[i].volume -= Time.deltaTime/2;
+
 		}
 	}
 	
 	public void FadeIn(int i){
-		
-	}
-	
-	public void CrossFade(int i, int y){
-		
-	}
-	
-	public void SetAllVolume()
+		if (audioSourceArray [i].volume < 1.0f) {
+			audioSourceArray [i].volume += Time.deltaTime/2;
+		}
+    }
+    
+    
+    
+    public void CrossFade(int i, int y){
+        
+    }
+    
+    public void SetAllVolume()
 	{
 		for (int j = 0; j < volumeArray.Length; j++)
 		{
