@@ -8,6 +8,7 @@ public class Room1PickUp : MonoBehaviour {
 	public GameObject light1;
 	public GameObject light2;
 	public GameObject light3;
+	public GameObject girl; 
 	//public Light myLight;
 	
 	float lightStep = .3f;
@@ -29,6 +30,7 @@ public class Room1PickUp : MonoBehaviour {
 		light.GetComponent("Light");
 		light2.light.intensity = 0.0f;
 		lightFlucker = light3.light.intensity;
+		girl.SetActive (false);
 		//print ("Turn light 2 off in beginning");
 	}
 	
@@ -91,12 +93,14 @@ public class Room1PickUp : MonoBehaviour {
 					light3.light.intensity -= Time.deltaTime;
 					lightFlucker = light3.light.intensity; 
 					light3.light.intensity = 0.2f;
+					girl.SetActive(true);
 					fuckerCounter = Random.Range(0, 3);
 				} else {
 				//	print ("turn it back off...");
 					//int random = Random.Range(1, 5);
 					//light3.light.intensity += Time.deltaTime * random;
 					light3.light.intensity = 0.0f; 
+					girl.SetActive(false);
 					lightFlucker = light3.light.intensity; 
 					fuckerCounter -= Time.deltaTime;
 				//	print ("counter" + fuckerCounter);
