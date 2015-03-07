@@ -61,10 +61,10 @@ public class PlayAudio : MonoBehaviour {
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
            // audioManager.FadeIn (8);
-            if (!banged) {
-                audioManager.Play (18);
-                banged = true;
-            }
+			if (!banged && opener.doorSlammed) {
+				audioManager.Play (18);
+				banged = true;
+			}
         } else {
             audioManager.SetVolume (7, 0.0f);
             audioManager.SetVolume (8, 0.0f);
