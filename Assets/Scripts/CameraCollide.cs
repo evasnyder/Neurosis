@@ -25,7 +25,7 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerEnter(Collider info)
 	{
-		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+		//print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		
 		//if the object that was collided with was the desk and what collided with it 
 		/*if (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController") {

@@ -16,7 +16,7 @@ public class Room1PickUp : MonoBehaviour {
 	float fuckerCounter = .5f;
 
 
-	bool pickedUp = false;
+	public bool pickedUp = false;
 	bool turnLight1 = false; 
 	bool turnLight2 = false; 
 	bool turnLight3 = false; 
@@ -29,7 +29,7 @@ public class Room1PickUp : MonoBehaviour {
 		light.GetComponent("Light");
 		light2.light.intensity = 0.0f;
 		lightFlucker = light3.light.intensity;
-		print ("Turn light 2 off in beginning");
+		//print ("Turn light 2 off in beginning");
 	}
 	
 	// Update is called once per frame
@@ -37,7 +37,7 @@ public class Room1PickUp : MonoBehaviour {
 		if (turnLight1) { 
 			light1.light.intensity -= lightStep * Time.deltaTime;
 			//lightTest.light.intensity = 0.0f;
-			print ("intensity: " + light1.light.intensity);
+			//print ("intensity: " + light1.light.intensity);
 			
 			if (light1.light.intensity <= 0.1) { 
 				turnLight2 = true;
@@ -48,17 +48,17 @@ public class Room1PickUp : MonoBehaviour {
 		
 		if (turnLight2) { 
 			light2.light.intensity = .2f;
-			print ("Turn Light 2 On");
+			//print ("Turn Light 2 On");
 			turnLight3 = true; 
 			turnLight2 = false; 
 		} 
 		
 		if (turnLight3) { 
-			print ("Light 3");
+			//print ("Light 3");
 			if (thirdLight > 1) { 
-				print ("Time Decrease");
+			//	print ("Time Decrease");
 				thirdLight -= Time.deltaTime;
-				print ("ThridLight Time :" + thirdLight);
+			//	print ("ThridLight Time :" + thirdLight);
 			} else { 
 				/*print("Turn Light 3 On");
                 light3.light.intensity = .5f;
@@ -87,19 +87,19 @@ public class Room1PickUp : MonoBehaviour {
         }*/
 				//THIS FLICKERS THE LIGHTS :) 
 				if (fuckerCounter <= 0) {
-					print ("lightFlucker > 0");
+				//	print ("lightFlucker > 0");
 					light3.light.intensity -= Time.deltaTime;
 					lightFlucker = light3.light.intensity; 
 					light3.light.intensity = 0.2f;
 					fuckerCounter = Random.Range(0, 3);
 				} else {
-					print ("turn it back off...");
+				//	print ("turn it back off...");
 					//int random = Random.Range(1, 5);
 					//light3.light.intensity += Time.deltaTime * random;
 					light3.light.intensity = 0.0f; 
 					lightFlucker = light3.light.intensity; 
 					fuckerCounter -= Time.deltaTime;
-					print ("counter" + fuckerCounter);
+				//	print ("counter" + fuckerCounter);
 				}
 				
 				
@@ -110,15 +110,16 @@ public class Room1PickUp : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider info)
 	{
-		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+	//	print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		
 		if (info.collider.name == "OVRPlayerController") {
 			note.transform.parent = player.transform;
 			//if(!pickedUp){
+			pickedUp = true;
 			//note.transform.Translate (player.transform.position.x+1, 0, player.transform.position.z+1); //= 
 			note.transform.localPosition= new Vector3(.44f,-.498f,.65f);
 			turnLight1 = true; 
-			print ("turn 1 light off");
+		//	print ("turn 1 light off");
 		}
 		
 	}

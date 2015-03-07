@@ -17,8 +17,15 @@ public class PlayAudio : MonoBehaviour {
 	PaperPickUp pickPaper;
 
 	bool banged;
+	bool paperSound = false;
+	bool paperSound2 = false;
 
 	float knockTime = 2.0f;
+
+	public GameObject paper2;
+	Room1PickUp pickPaper2;
+
+
 
 	//	this is the gameObject appear which is set to "Desk" in the inspector 
 	// 	because it has to pull out the CameraCollide from whatever object was collided with
@@ -37,23 +44,19 @@ public class PlayAudio : MonoBehaviour {
 		audioManager.SetVolume (11, 0.0f);
 		opener = door.GetComponent<firstDoorToOpen>();
 		pickPaper = paper.GetComponent<PaperPickUp>();
+		pickPaper2 = paper2.GetComponent<Room1PickUp>();
     }
     
     // Update is called once per frame
     void Update () {
 
-		//	play background music - wind and ambiance (spelling...???)
-		// audioManager.PlayLoop (8);
-		//audioManager.PlayLoop (7);
-		//if (radioHit) {
 		audioManager.PlayLoop (11);
 		audioManager.PlayLoop (8);
-		//}
+	
 
         knocking();
         
 		if (cameraCollide.inTheHall == true) {
-            Debug.Log ("BOoo");
             audioManager.FadeOut (11);
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
@@ -69,26 +72,21 @@ public class PlayAudio : MonoBehaviour {
             audioManager.Play (8);
 
         }
-		/* 
-		 *  If the camera collides with the desk i.e setting the boolean of deskScareHappens equal to true
-	 	* */ 
-		/*	if (cameraCollide.deskScareHappens == true) {
-			if(!radioOn){
-				radioOn = true;
-				radioHit = true;
-				Debug.Log ("radon");
-				audioManager.SetVolume(11,1.0f);
 
+		if (pickPaper.pickedUp == true) {
+			if(paperSound == false){
+				audioManager.Play (15);
+				paperSound = true;
 			}
-			else{
-				radioOn = false;
-				Debug.Log ("radoff");
-				audioManager.SetVolume(11,0.0f);
+		}
+
+		if (pickPaper2.pickedUp == true) {
+			if(paperSound2 == false){
+				audioManager.Play (15);
+				paperSound2 = true;
 			}
-
-
-    }
-    */
+		}
+	
 	}
     
 void knocking(){

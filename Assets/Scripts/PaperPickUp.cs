@@ -16,7 +16,7 @@ public class PaperPickUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("lmao");
+
 	}
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class PaperPickUp : MonoBehaviour {
 	void OnTriggerEnter(Collider info)
 	{
 
-		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+	//	print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 
 		if (info.collider.name == "OVRPlayerController") {
 			note.transform.parent = player.transform;
