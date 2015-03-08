@@ -29,27 +29,34 @@ public class Scares : MonoBehaviour {
 	public void Appear(){
 		//	make the little girl appear 
 		girl.SetActive (true);
-		//print ("scare position is " + girlSmiling.transform.position);
 		//invoke the Dissapear() method below after .6 seconds 
 		//Invoke ("Smile",.5f);
 
 	}
 	public void ScareMe(Vector3 pos){
-		girl.SetActive (false);
-		girlMidway.SetActive (true);
-		girlSmiling.transform.position = new Vector3(pos.x+1.3f, 0.9f, -48.2f);
-		Invoke ("Smile",.2f);
+		//print ("scare position is " + girlSmiling.transform.position);
+		//print ("player position is " + pos);
+		//girlMidway.SetActive (true);
+		girlSmiling.transform.position = new Vector3(pos.x, 0.9f, pos.z-1.3f);
+		//Invoke ("Smile",.2f);
+		girlSmiling.SetActive (true);
+		Invoke ("DissapearSmile",.4f);
 	}
 
 	void Smile(){
 		print ("smile is called");
 		girlMidway.SetActive (false);
 		girlSmiling.SetActive (true);
-		Invoke ("Dissapear",.3f);
+		Invoke ("DissapearSmile",.2f);
+	}
+
+	void DissapearSmile(){
+		girlSmiling.SetActive (false);
 	}
 
 	//	Makes the little girl dissapear 
 	public void Dissapear(){
-		girlSmiling.SetActive (false);
+		//girlSmiling.SetActive (false);
+		girl.SetActive (false);
 	}
 }

@@ -25,14 +25,10 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerEnter(Collider info)
 	{
-		//print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		
 		//if the object that was collided with was the desk and what collided with it 
-		/*if (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController") {
-			//call Appear from JUMPSCARES.CS to make the scary object appear 
-			scareToPerform.Appear (info.transform.position);
-
-		} else*/ if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
+	 if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
 			print ("player should respawn");
 			StartCoroutine (respawn (info)); 
 			//Destroy (gameObject);
@@ -41,11 +37,17 @@ public class CameraCollide : MonoBehaviour {
 			inTheHall = true;
 			Debug.Log ("halling around");
 		   }
+		if (gameObject.name == "DoorDoubleScare" && info.collider.name == "OVRPlayerController") { 
+			if (hasScares) {
+				scareToPerform.ScareMe(info.transform.position);
+			}
+		}
 	}
 
 	void OnTriggerStay(Collider player){
-		if (gameObject.name == "Radiator" && player.collider.name == "OVRPlayerController") {
+		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController") {
 			if (hasScares) {
+			print ("girls appears");
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
 			scareToPerform.Appear();
 			}
@@ -53,8 +55,12 @@ public class CameraCollide : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider player){
-		if (hasScares) {
-			scareToPerform.ScareMe(player.transform.position);
+		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController") {
+			if (hasScares) {
+				print ("girls disappears");
+				//scareToPerform.ScareMe(player.transform.position);
+				scareToPerform.Dissapear ();
+			}
 		}
 	}
 

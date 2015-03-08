@@ -6,16 +6,12 @@ public class triggerDoubleDoors : MonoBehaviour {
 	
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-	
-	void OnTriggerEnter (Collider other){
-		print("shake double doors");
 		door.animation.Play ("Take 001");
 	}
+
 }
