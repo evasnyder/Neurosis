@@ -69,6 +69,7 @@
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />
      <Compile Include="Assets\Scripts\PaperPickUp.cs" />
      <Compile Include="Assets\Scripts\PlayAudio.cs" />
+     <Compile Include="Assets\Scripts\Room1GirlScare.cs" />
      <Compile Include="Assets\Scripts\Room1PickUp.cs" />
      <Compile Include="Assets\Scripts\Run.cs" />
      <Compile Include="Assets\Scripts\Scares.cs" />
@@ -78,6 +79,7 @@
      <Compile Include="Assets\Scripts\movingWall.cs" />
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <Compile Include="Assets\Scripts\triggerDoubleDoors.cs" />
+     <Compile Include="Assets\Scripts\wallsBlood.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />

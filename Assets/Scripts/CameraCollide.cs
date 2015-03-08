@@ -39,7 +39,7 @@ public class CameraCollide : MonoBehaviour {
 		   }
 		if (gameObject.name == "DoorDoubleScare" && info.collider.name == "OVRPlayerController") { 
 			if (hasScares) {
-				scareToPerform.ScareMe(info.transform.position);
+				scareToPerform.ScareMe(info.transform.position, info.transform.rotation);
 			}
 		}
 	}
