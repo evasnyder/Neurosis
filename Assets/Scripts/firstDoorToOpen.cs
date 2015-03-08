@@ -9,7 +9,8 @@ public class firstDoorToOpen : MonoBehaviour {
 	private bool fogOn;
 	private int counter = 0;
 
-	public bool doorHit = false; //used for knocking.cs(audio)
+	public bool doorHit = false; //used for playaudio.cs
+	public bool doorSlammed = false; //also used for audio
 	
 	// Use this for initialization
 	void Start () {
@@ -40,6 +41,7 @@ public class firstDoorToOpen : MonoBehaviour {
 		print("close door");
 		door.animation["Take 001"].speed = -1;    
 		door.animation.Play("Take 001");
+		doorSlammed = true;
 	}
 
 	void DoorSlam(){

@@ -11,12 +11,13 @@ public class PaperPickUp : MonoBehaviour {
 	public GameObject note;
 	public GameObject player;
 	//public GameObject light;
+	public GameObject doorLock;
 
 	public bool pickedUp = false;
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log ("lmao");
+
 	}
 	
 	// Update is called once per frame
@@ -27,7 +28,7 @@ public class PaperPickUp : MonoBehaviour {
 	void OnTriggerEnter(Collider info)
 	{
 
-		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+	//	print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 
 		if (info.collider.name == "OVRPlayerController") {
 			note.transform.parent = player.transform;
@@ -37,6 +38,7 @@ public class PaperPickUp : MonoBehaviour {
 
 				//new Vector3(-.17f, -.498f,.65f);
 				pickedUp = true;
+			doorLock.SetActive(false);
 			//}
 
 			//TURN ONLY ONE LIGHT OFF 

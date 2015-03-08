@@ -3,26 +3,11 @@ using System.Collections;
 
 public class CameraCollide : MonoBehaviour {
 
-	/*	gameObject scares is the little girl that appears behind the desk when hit 
-	*	for example, this script could also be attatched to the door and something else could 
-	*	appear at the door when you hit it.
-	**/
-	public GameObject scares;
-	public bool hasScares;
-	/* 
-	 *  This is used for the audio.  This boolean is used in PLAYAUDIO.CS to play teh audio when 
-	 * 	this is set equal to true. i.e something hit the object and the scare appeared.
-	 * */ 
-	public bool deskScareHappens = false;
-
-	/* 
-	 *	Object that is of type SCARES.CS which holds the code to make the little girl (or any scare) appear
-	 *	when the target object was collided with.  
-	 * */ 
-	Scares jumpScares; 
-
-	//public GameObject note;
-	//public GameObject player;
+	public bool hasScares; //if the object has scares to trigger
+	public GameObject scares; //assign scares
+	Scares scareToPerform; //scares to activate
+	public GameObject hallBrick;
+	public bool inTheHall = false;
 
 	// Use this for initialization
 
@@ -31,7 +16,7 @@ public class CameraCollide : MonoBehaviour {
 	void Start () {
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
-			jumpScares = scares.GetComponent<Scares> ();
+			scareToPerform = scares.GetComponent<Scares> ();
 		}
 
 	}
@@ -43,24 +28,19 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerEnter(Collider info)
 	{
-			print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
+		//print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		
 		//if the object that was collided with was the desk and what collided with it 
-		//was the player 
-		if ((gameObject.name == "Desk" && info.collider.name == "OVRPlayerController") || (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController")) {
-
+		/*if (gameObject.name == "Radiator" && info.collider.name == "OVRPlayerController") {
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
-			//jumpScares.Appear ();
-			//set the boolean equal to true which is used to play the scary audio along 
-			//with the girl appearing
-			//note.transform.parent = player.transform;
-			//note.transform.position = new Vector3(-.17f, -.498f,.65f);
-			deskScareHappens = true;
-		} else if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
+			scareToPerform.Appear (info.transform.position);
+
+		} else*/ if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
 			print ("player should respawn");
 			StartCoroutine (respawn (info)); 
 			//Destroy (gameObject);
 		}
+<<<<<<< HEAD
 
 		if (gameObject.name == "HallTrigger" && info.collider.name == "OVRPlayerController") {
 			inHall = true;
@@ -71,15 +51,30 @@ public class CameraCollide : MonoBehaviour {
 			
 			Invoke ("Knocking", 1.0f);
 		}
+=======
+		if(gameObject.name == "hallBrick" && info.collider.name == "OVRPlayerController"){ 
+			inTheHall = true;
+			Debug.Log ("halling around");
+		   }
+>>>>>>> master
 	}
 
-	void Knocking(){
-		audio.Play ();
-	}
-	*/
+	void OnTriggerStay(Collider player){
+		if (gameObject.name == "Radiator" && player.collider.name == "OVRPlayerController") {
+			if (hasScares) {
+			//call Appear from JUMPSCARES.CS to make the scary object appear 
+			scareToPerform.Appear();
+			}
+		}
 	}
 
+	void OnTriggerExit(Collider player){
+		if (hasScares) {
+			scareToPerform.ScareMe(player.transform.position);
+		}
+	}
 
+	/*Called to respawn the player back in the first room*/
 	IEnumerator respawn(Collider toRespawn){
 		renderer.enabled = false;
 		yield return new WaitForSeconds(2.0f);
