@@ -11,8 +11,9 @@ public class Room1PickUp : MonoBehaviour {
 	public GameObject girl; 
 	//public Light myLight;
 	
-	float lightStep = .3f;
+	float lightStep = .1f;
 	float thirdLight = 5f;
+	float light2counter = 15f;
 	float fucker = 1000;
 	float fuckerCounter = .5f;
 	int girlcounter = 0;
@@ -41,7 +42,7 @@ public class Room1PickUp : MonoBehaviour {
 		if (turnLight1) { 
 			light1.light.intensity -= lightStep * Time.deltaTime;
 			//lightTest.light.intensity = 0.0f;
-			//print ("intensity: " + light1.light.intensity);
+			print ("intensity: " + light1.light.intensity);
 			
 			if (light1.light.intensity <= 0.1) { 
 				turnLight2 = true;
@@ -53,8 +54,12 @@ public class Room1PickUp : MonoBehaviour {
 		if (turnLight2) { 
 			light2.light.intensity = .2f;
 			//print ("Turn Light 2 On");
-			turnLight3 = true; 
-			turnLight2 = false; 
+			light2counter -= Time.deltaTime;
+			print ("light 2 Counter = " + light2counter);
+			if (light2counter <= 0 ) { 
+				turnLight3 = true; 
+				turnLight2 = false; 
+			} 
 		} 
 		
 		if (turnLight3) { 
@@ -65,31 +70,6 @@ public class Room1PickUp : MonoBehaviour {
 				girl.SetActive(false);
 			//	print ("ThridLight Time :" + thirdLight);
 			} else { 
-				/*print("Turn Light 3 On");
-                light3.light.intensity = .5f;
-
-                float time = Time.deltaTime;
-
-                if(lightFlucker) { 
-                    fuckerCounter++;
-                    print ("fuckerCounter" + fuckerCounter);
-                    lightFlucker = true;
-                } 
-
-                //yield WaitForSeconds(1); 
-                if(fuckerCounter%2.0f ==0){
-                    Debug.Log ("fucker has fucked");
-                    light3.light.intensity =1.0f;
-                    fucker -=Time.deltaTime;
-                }
-                else{
-                    fucker -=Time.deltaTime;
-                    Debug.Log ("fucker is waiting");
-                    print ("fucker: " + fucker);
-                    light3.light.intensity =0.0f;
-                }
-            } 
-        }*/
 				//THIS FLICKERS THE LIGHTS :) 
 				if (fuckerCounter <= 0) {
 				//	print ("lightFlucker > 0");
@@ -111,8 +91,6 @@ public class Room1PickUp : MonoBehaviour {
 					fuckerCounter -= Time.deltaTime;
 					print ("counter" + fuckerCounter);
 				}
-				
-				
 				
 			}
 		}
