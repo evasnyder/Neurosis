@@ -67,9 +67,11 @@ public class CameraCollide : MonoBehaviour {
 	/*Called to respawn the player back in the first room*/
 	IEnumerator respawn(Collider toRespawn){
 		renderer.enabled = false;
+		RenderSettings.fogDensity = 1.0f;
 		yield return new WaitForSeconds(2.0f);
 		toRespawn.transform.position = new Vector3(0.04833326f, 3.980667f, 0.0f);
 		toRespawn.transform.rotation = Quaternion.identity;
+		RenderSettings.fogDensity = 0.25f;
 		renderer.enabled = true;
 	}
 }

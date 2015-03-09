@@ -24,7 +24,6 @@ public class wallsBlood : MonoBehaviour {
 			calledOnce = true;
 			foreach(GameObject wall in walls){
 					changeTextures(wall.name);
-					print("changin texture on "+ wall.name);
 				}
 		}  
 	}

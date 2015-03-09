@@ -27,23 +27,20 @@ public class Scares : MonoBehaviour {
 	 * 	Makes the litlte girl appear 
 	 * */ 
 	public void Appear(){
-		//	make the little girl appear 
+		//	make the little girl appear on stairs
 		girl.SetActive (true);
-		//invoke the Dissapear() method below after .6 seconds 
-		//Invoke ("Smile",.5f);
-
 	}
+	//function for a nonshaking smiling doors
 	public void ScareMe(Vector3 pos, Quaternion rot){
-		print ("scare position is " + girlSmiling.transform.position);
-		print ("player position is " + pos);
-		print ("player rotation is " + rot);
+		//print ("scare position is " + girlSmiling.transform.position);
+		//print ("player position is " + pos);
+		//print ("player rotation is " + rot);
 		//girlMidway.SetActive (true);
 		girlSmiling.transform.position = new Vector3(pos.x, 0.9f, pos.z-1.3f);
 		girlSmiling.transform.rotation = rot;
-		//girlSmiling.transform.parent = tran;
 		//Invoke ("Smile",.2f);
 		girlSmiling.SetActive (true);
-		//Invoke ("DissapearSmile",.4f);
+		Invoke ("DissapearSmile",.4f);
 	}
 	//Smile is not called yet, it should be callled if midway girl is wanted
 	void Smile(){
