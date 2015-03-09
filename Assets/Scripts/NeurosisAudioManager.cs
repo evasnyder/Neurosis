@@ -44,6 +44,10 @@ public class NeurosisAudioManager : MonoBehaviour {
 		
 		
 	}
+
+	public void SetPriority(int i, int pri){
+		audioSourceArray [i].priority = pri;
+	}
 	
 	public void Play(int i){
 		//Debug.Log ("play");

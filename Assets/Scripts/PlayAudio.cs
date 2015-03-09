@@ -37,6 +37,7 @@ public class PlayAudio : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
+
 		//	setting the audioManager to type NeurosisAudioManager
         audioManager = audio.GetComponent<NeurosisAudioManager> ();
 		//	setting the cameraCollide to type CameraCollide 
@@ -45,6 +46,7 @@ public class PlayAudio : MonoBehaviour {
 		opener = door.GetComponent<firstDoorToOpen>();
 		pickPaper = paper.GetComponent<PaperPickUp>();
 		pickPaper2 = paper2.GetComponent<Room1PickUp>();
+		audioManager.SetPriority (11, 0);
     }
     
     // Update is called once per frame
