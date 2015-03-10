@@ -4,6 +4,7 @@ using System.Collections;
 public class Room1PickUp : MonoBehaviour {
 	
 	public GameObject note;
+	public GameObject note2;
 	public GameObject player;
 	public GameObject light1;
 	public GameObject light2;
@@ -33,6 +34,7 @@ public class Room1PickUp : MonoBehaviour {
 		light2.light.intensity = 0.0f;
 		lightFlucker = light3.light.intensity;
 		girl.SetActive (false);
+		note2.SetActive (false);
 		//print ("Turn light 2 off in beginning");
 	}
 	
@@ -70,6 +72,7 @@ public class Room1PickUp : MonoBehaviour {
 				girl.SetActive(false);
 			//	print ("ThridLight Time :" + thirdLight);
 			} else { 
+				note2.SetActive(true);
 				//THIS FLICKERS THE LIGHTS :) 
 				if (fuckerCounter <= 0) {
 				//	print ("lightFlucker > 0");
