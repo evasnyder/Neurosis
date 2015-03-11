@@ -52,6 +52,10 @@ public class PlayAudio : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+		if (cameraCollide.jiggle) {
+			audioManager.Play (28);
+		}
+
 		audioManager.PlayLoop (11);
 		audioManager.PlayLoop (8);
 	

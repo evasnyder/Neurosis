@@ -8,6 +8,7 @@ public class CameraCollide : MonoBehaviour {
 	Scares scareToPerform; //scares to activate
 	public GameObject hallBrick;
 	public bool inTheHall = false;
+	public bool jiggle = false;
 
 	// Use this for initialization
 	void Start () {
@@ -28,20 +29,22 @@ public class CameraCollide : MonoBehaviour {
 		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		
 		//if the object that was collided with was the desk and what collided with it 
-	 if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
+		if (gameObject.name == "RespawnPoint" && info.collider.name == "OVRPlayerController") { 
 			print ("player should respawn");
 			StartCoroutine (respawn (info)); 
 			//Destroy (gameObject);
 		}
-		if(gameObject.name == "hallBrick" && info.collider.name == "OVRPlayerController"){ 
+		if (gameObject.name == "hallBrick" && info.collider.name == "OVRPlayerController") { 
 			inTheHall = true;
 			Debug.Log ("halling around");
-		   }
+		}
 		if (gameObject.name == "DoorDoubleScare" && info.collider.name == "OVRPlayerController") { 
 			if (hasScares) {
-				scareToPerform.ScareMe(info.transform.position, info.transform.rotation);
+				scareToPerform.ScareMe (info.transform.position, info.transform.rotation);
 			}
 		}
+
+
 	}
 
 	void OnTriggerStay(Collider player){
@@ -52,6 +55,10 @@ public class CameraCollide : MonoBehaviour {
 			scareToPerform.Appear();
 			}
 		}
+		if (gameObject.name == "DoorLockCube" && player.collider.name == "OVRPlayerController") {
+			jiggle = true;
+			Debug.Log ("fuuuuuuuuck");
+        }
 	}
 
 	void OnTriggerExit(Collider player){
