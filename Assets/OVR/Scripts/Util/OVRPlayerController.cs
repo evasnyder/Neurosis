@@ -237,13 +237,13 @@ public class OVRPlayerController : MonoBehaviour
 //			//if you've pressed slash // 
 			if (Input.GetKeyDown (KeyCode.Slash)) { 
 					print ("RUN"); //change the acceleration 
-					Acceleration = 1.0f;
+					Acceleration = .5f;
 					print ("Acceleration= " + Acceleration); 
 				} 
 //				//if the key has been released 
 				if (Input.GetKeyUp (KeyCode.Slash)) { 
 					print ("Back To Normal"); 
-					Acceleration = .2f; 
+					Acceleration = .1f; 
 				}
 				///move :) 
 				MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * Vector3.forward); 
@@ -252,13 +252,13 @@ public class OVRPlayerController : MonoBehaviour
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
 				print ("RUN");
 				//change the acceleration 
-				Acceleration = 1.0f;
+				Acceleration = .5f;
 				print ("Acceleration= " + Acceleration);
 			}
 			//if the key has been released 
 			if(Input.GetKeyUp(KeyCode.Slash)) { 
 				print ("Back To Normal" ); 
-				Acceleration = .2f; 
+				Acceleration = .1f; 
 			}
 			MoveThrottle += ort * (transform.lossyScale.z * moveInfluence * BackAndSideDampen * Vector3.back);
 		} 
@@ -266,13 +266,13 @@ public class OVRPlayerController : MonoBehaviour
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
 				print ("RUN");
 				//change the acceleration 
-				Acceleration = 1.0f;
+				Acceleration = .5f;
 				print ("Acceleration= " + Acceleration);
 			}
 			//if the key has been released 
 			if(Input.GetKeyUp(KeyCode.Slash)) { 
 				print ("Back To Normal" ); 
-				Acceleration = .2f; 
+				Acceleration = .1f; 
 			}
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.left);
 
@@ -281,13 +281,13 @@ public class OVRPlayerController : MonoBehaviour
 			if(Input.GetKeyDown (KeyCode.Slash)) { 
 				print ("RUN");
 				//change the acceleration 
-				Acceleration = 1.0f;
+				Acceleration = .5f;
 				print ("Acceleration= " + Acceleration);
 			}
 			//if the key has been released 
 			if(Input.GetKeyUp(KeyCode.Slash)) { 
 				print ("Back To Normal" ); 
-				Acceleration = .2f; 
+				Acceleration = .1f; 
 			}
 			MoveThrottle += ort * (transform.lossyScale.x * moveInfluence * BackAndSideDampen * Vector3.right);
 		} 
@@ -465,7 +465,8 @@ public class OVRPlayerController : MonoBehaviour
 
 	public void run() 
 	{ 
-		Acceleration = 1f; 
+		Acceleration = .5f; 
+
 	} 
 }
 
