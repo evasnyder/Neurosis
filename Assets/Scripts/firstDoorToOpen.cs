@@ -28,7 +28,7 @@ public class firstDoorToOpen : MonoBehaviour {
 		}
 	}
 	
-	void OnTriggerEnter (Collider other){
+	IEnumerator OnTriggerEnter (Collider other){
 		if(other.collider.name == "OVRPlayerController"){
 			audioManager.Play (1);
 			doorHit = true;
@@ -36,17 +36,15 @@ public class firstDoorToOpen : MonoBehaviour {
 			door.animation ["Take 001"].speed = 1;
 			door.animation.Play ("Take 001");
 			fogOn = true;
-		}
-
-	}
-
-	void onTriggerExit(Collider other){
-		if (other.collider.name == "OVRPlayerController") {
+			
+			yield return new WaitForSeconds(5);
+			
 			print ("close door");
 			door.animation ["Take 001"].speed = -1;    
 			door.animation.Play ("Take 001");
 			doorSlammed = true;
 		}
+		
 	}
 
 	void DoorSlam(){

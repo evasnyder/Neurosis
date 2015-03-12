@@ -18,20 +18,20 @@ public class triggerDoorOpen : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter (Collider other){
-		audioManager.Play (1);
-
-		print("open door");
-		door.animation["Take 001"].speed = 1;
-		door.animation.Play("Take 001");
+	IEnumerator OnTriggerEnter (Collider other){
+		if (other.collider.name == "OVRPlayerController") {
+			audioManager.Play (1);
+			print ("open door");
+			door.animation ["Take 001"].speed = 1;
+			door.animation.Play ("Take 001");
+			
+			yield return new WaitForSeconds(5);
+			
+			print("close door");
+			door.animation["Take 001"].speed = -1;    
+			door.animation.Play("Take 001");
+		}
 		
-		//yield return new WaitForSeconds(5);
-
 	}
-	void onTriggerExit(Collider other){
-		
-		print("close door");
-		door.animation["Take 001"].speed = -1;    
-		door.animation.Play("Take 001");
-	}
+	
 }
