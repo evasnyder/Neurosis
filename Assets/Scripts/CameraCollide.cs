@@ -38,12 +38,7 @@ public class CameraCollide : MonoBehaviour {
 			inTheHall = true;
 			Debug.Log ("halling around");
 		}
-		if (gameObject.name == "DoorDoubleScare" && info.collider.name == "OVRPlayerController") { 
-			if (hasScares) {
-				scareToPerform.ScareMe (info.transform.position, info.transform.rotation);
-			}
-		}
-
+	
 
 	}
 
@@ -59,6 +54,12 @@ public class CameraCollide : MonoBehaviour {
 			jiggle = true;
 			Debug.Log ("fuuuuuuuuck");
         }
+		if (gameObject.name == "DoorDoubleScare" && player.collider.name == "OVRPlayerController") { 
+			if (hasScares) {
+				scareToPerform.ScareMe (player.transform.position, player.transform.rotation);
+			}
+		}
+
 	}
 
 	void OnTriggerExit(Collider player){

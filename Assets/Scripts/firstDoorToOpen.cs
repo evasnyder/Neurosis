@@ -39,12 +39,21 @@ public class firstDoorToOpen : MonoBehaviour {
 			
 			yield return new WaitForSeconds(5);
 			
+			/*print ("close door");
+			door.animation ["Take 001"].speed = -1;    
+			door.animation.Play ("Take 001");
+			doorSlammed = true;*/
+		}
+		
+	}
+
+	void OnTriggerExit (Collider other){
+		if (other.collider.name == "OVRPlayerController") {
 			print ("close door");
 			door.animation ["Take 001"].speed = -1;    
 			door.animation.Play ("Take 001");
 			doorSlammed = true;
 		}
-		
 	}
 
 	void DoorSlam(){

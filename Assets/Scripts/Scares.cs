@@ -40,7 +40,7 @@ public class Scares : MonoBehaviour {
 		girlSmiling.transform.rotation = rot;
 		//Invoke ("Smile",.2f);
 		girlSmiling.SetActive (true);
-		Invoke ("DissapearSmile",.4f);
+		Invoke ("DissapearSmile",.2f);
 	}
 	//Smile is not called yet, it should be callled if midway girl is wanted
 	void Smile(){
