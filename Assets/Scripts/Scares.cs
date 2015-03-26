@@ -36,11 +36,11 @@ public class Scares : MonoBehaviour {
 		//print ("player position is " + pos);
 		//print ("player rotation is " + rot);
 		//girlMidway.SetActive (true);
-		girlSmiling.transform.position = new Vector3(pos.x, 0.9f, pos.z-1.3f);
+		girlSmiling.transform.position = new Vector3(pos.x, 0.9f, pos.z-2f);
 		girlSmiling.transform.rotation = rot;
 		//Invoke ("Smile",.2f);
 		girlSmiling.SetActive (true);
-		Invoke ("DissapearSmile",.2f);
+		Invoke ("DissapearSmile",.3f);
 	}
 	//Smile is not called yet, it should be callled if midway girl is wanted
 	void Smile(){
