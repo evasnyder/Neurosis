@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 
@@ -12,17 +12,32 @@ public class PaperPickUp : MonoBehaviour {
 	public GameObject player;
 	//public GameObject light;
 	public GameObject doorLock;
+	public GameObject infoText;
+	private bool collision = false;
 
 	public bool pickedUp = false;
 
 	// Use this for initialization
 	void Start () {
-
+		infoText.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (collision & !pickedUp) {
+			if (Input.GetKey (KeyCode.X)) {
+				
+				note.transform.parent = player.transform;
+				//if(!pickedUp){
+				//note.transform.Translate (player.transform.position.x+1, 0, player.transform.position.z+1); //= 
+				note.transform.localPosition = new Vector3 (.44f, -.498f, .65f);
+				
+				//new Vector3(-.17f, -.498f,.65f);
+				pickedUp = true;
+				
+				doorLock.SetActive (false);
+			}
+		}
 	}
 
 	void OnTriggerEnter(Collider info)
@@ -31,19 +46,20 @@ public class PaperPickUp : MonoBehaviour {
 	//	print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 
 		if (info.collider.name == "OVRPlayerController") {
-			note.transform.parent = player.transform;
-			//if(!pickedUp){
-			//note.transform.Translate (player.transform.position.x+1, 0, player.transform.position.z+1); //= 
-			note.transform.localPosition= new Vector3(.44f,-.498f,.65f);
-
-				//new Vector3(-.17f, -.498f,.65f);
-				pickedUp = true;
-			doorLock.SetActive(false);
+			infoText.SetActive(true);
+			collision=true;
 			//}
 
 			//TURN ONLY ONE LIGHT OFF 
 			//light.intensity = 0.0f; 
 		}
+
             
-}
+	}
+	void OnTriggerExit(Collider info){
+		if (info.collider.name == "OVRPlayerController") {
+			infoText.SetActive (false);
+			collision=false;
+		}
+	}
 }
