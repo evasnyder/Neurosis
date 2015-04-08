@@ -9,9 +9,11 @@ public class CameraCollide : MonoBehaviour {
 	public GameObject hallBrick;
 	public bool inTheHall = false;
 	public bool jiggle = false;
+	private bool alreadyTriggered;
 
 	// Use this for initialization
 	void Start () {
+		alreadyTriggered = false;
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
 			scareToPerform = scares.GetComponent<Scares> ();
@@ -43,19 +45,33 @@ public class CameraCollide : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider player){
-		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController") {
+		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController"){
+			print("girl appears on stairs");
 			if (hasScares) {
-			print ("girls appears");
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
 			scareToPerform.Appear();
 			}
+		}
+		if (gameObject.name == "Wall_PlainFirstScare" && player.collider.name == "OVRPlayerController"){
+			print("girl appears in the hallway");
+			if(hasScares){
+				if (alreadyTriggered==false) {
+					//call Appear from JUMPSCARES.CS to make the scary object appear 
+					scareToPerform.Appear();
+					alreadyTriggered=true;
+				}
+			}
+
 		}
 		if (gameObject.name == "DoorLockCube" && player.collider.name == "OVRPlayerController") {
 			jiggle = true;
 			Debug.Log ("fuuuuuuuuck");
         }
-		if (gameObject.name == "DoorDoubleScare" && player.collider.name == "OVRPlayerController") { 
+		//girl jumpscare
+		if (gameObject.name == "BedFrameJumpScare" && player.collider.name == "OVRPlayerController") { 
 			if (hasScares) {
+				print("girl jumpscares at double doors");
+				//girl that jumps into the face
 				scareToPerform.ScareMe (player.transform.position, player.transform.rotation);
 			}
 		}
@@ -63,11 +79,18 @@ public class CameraCollide : MonoBehaviour {
 	}
 
 	void OnTriggerExit(Collider player){
+		//girl on stairs
 		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController") {
 			if (hasScares) {
-				print ("girls disappears");
-				//scareToPerform.ScareMe(player.transform.position);
+				print ("girls disappears at stairs");
 				scareToPerform.Dissapear ();
+			}
+		}
+		if (gameObject.name == "Wall_PlainFirstScare" && player.collider.name == "OVRPlayerController") {
+			if (hasScares) {
+				print ("girls slides away in hall");
+				//girl that slides away
+				scareToPerform.SlidingGirl();
 			}
 		}
 	}

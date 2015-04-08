@@ -3,7 +3,7 @@ using System.Collections;
 
 public class PlayAudio : MonoBehaviour {
     
-	//	this is the game object that holds the audio manager
+	/*//	this is the game object that holds the audio manager
     public GameObject audio;
 	//	this is the actual audio manager of type NeurosisAudioManager
     NeurosisAudioManager audioManager;
@@ -60,7 +60,7 @@ public class PlayAudio : MonoBehaviour {
 		audioManager.PlayLoop (8);
 	
 
-        knocking();
+       // knocking();
         
 		if (cameraCollide.inTheHall == true) {
             audioManager.FadeOut (11);
@@ -107,5 +107,5 @@ void knocking(){
 		}
 
 
-		}
+		}*/
 }

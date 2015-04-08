@@ -11,7 +11,24 @@ public class triggerDoubleDoors : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		door.animation.Play ("Take 001");
+
+	}
+
+	void OnTriggerEnter (Collider other){
+		if (gameObject.name == "DoorDoubleOpen" && other.collider.name == "OVRPlayerController") {
+			door.animation.Play ("Take 0010");
+			print ("doubledoor should open");
+		}
+		if (gameObject.name == "DoorDoubleShake" && other.collider.name == "OVRPlayerController") {
+			door.animation.Play ("Take 001");
+		}
+
+	}
+
+	void OnTriggerExit (Collider other){
+		if (other.collider.name == "OVRPlayerController") {
+			door.animation.Play("Take 0011");
+		}
 	}
 
 }

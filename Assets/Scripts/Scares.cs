@@ -5,58 +5,84 @@ public class Scares : MonoBehaviour {
 
 	//creating an instance of the little girl
 	public GameObject girl;
-	public GameObject girlMidway;
-	public GameObject girlSmiling;
 
 
 	// Use this for initialization
 	void Start () {
-		//begin by setting the little girl equal to false so she cannot be seen in the room
 		girl.SetActive (false);
-		girlMidway.SetActive (false);
-		girlSmiling.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
-
-	/* 
-	 *  Method is called when the desk is collided with by the camera 
-	 * 	Makes the litlte girl appear 
-	 * */ 
+	
+	//	make the little girl appear
 	public void Appear(){
-		//	make the little girl appear on stairs
-		girl.SetActive (true);
-	}
-	//function for a nonshaking smiling doors
-	public void ScareMe(Vector3 pos, Quaternion rot){
-		//print ("scare position is " + girlSmiling.transform.position);
-		//print ("player position is " + pos);
-		//print ("player rotation is " + rot);
-		//girlMidway.SetActive (true);
-		girlSmiling.transform.position = new Vector3(pos.x, 0.9f, pos.z-2f);
-		girlSmiling.transform.rotation = rot;
-		//Invoke ("Smile",.2f);
-		girlSmiling.SetActive (true);
-		Invoke ("DissapearSmile",.3f);
-	}
-	//Smile is not called yet, it should be callled if midway girl is wanted
-	void Smile(){
-		print ("smile is called");
-		girlMidway.SetActive (false);
-		girlSmiling.SetActive (true);
-		Invoke ("DissapearSmile",.2f);
+			girl.SetActive (true);	
 	}
 
-	void DissapearSmile(){
-		girlSmiling.SetActive (false);
+	//function for a jumpscare girl
+	public void ScareMe(Vector3 pos, Quaternion rot){
+			girl.transform.position = new Vector3 (pos.x, 0.9f, pos.z - 1f);
+			girl.transform.rotation = rot;
+			girl.SetActive (true);
+			Invoke ("Dissapear", .3f);
+		
 	}
 
 	//	Makes the little girl dissapear 
 	public void Dissapear(){
-		//girlSmiling.SetActive (false);
 		girl.SetActive (false);
 	}
+
+	/// 
+	/// LERPING STUFF
+	/// 
+
+	public float timeTakenDuringLerp = 0.2f;
+	private bool _isLerping;
+	private Vector3 _startPosition;
+	private Vector3 _endPosition;
+	private float _timeStartedLerping;
+
+	//function for a running away girl
+	public void SlidingGirl(){
+		_isLerping = true;
+		_timeStartedLerping = Time.time;
+		
+		//We set the start position to the current position, and the finish to 10 spaces in the 'forward' direction
+		_startPosition = girl.transform.position;
+		
+		_endPosition = new Vector3 (2.4f, 1f, -18.27f);
+
+	}
+	
+	//We do the actual interpolation in FixedUpdate(), since we're dealing with a rigidbody
+	void FixedUpdate()
+	{
+		if(_isLerping)
+		{
+			//We want percentage = 0.0 when Time.time = _timeStartedLerping
+			//and percentage = 1.0 when Time.time = _timeStartedLerping + timeTakenDuringLerp
+			//In other words, we want to know what percentage of "timeTakenDuringLerp" the value
+			//"Time.time - _timeStartedLerping" is.
+			float timeSinceStarted = Time.time - _timeStartedLerping;
+			float percentageComplete = timeSinceStarted / timeTakenDuringLerp;
+			
+			//Perform the actual lerping.  Notice that the first two parameters will always be the same
+			//throughout a single lerp-processs (ie. they won't change until we hit the space-bar again
+			//to start another lerp)
+			transform.position = Vector3.Lerp (_startPosition, _endPosition, percentageComplete);
+			
+			//When we've completed the lerp, we set _isLerping to false
+			if(percentageComplete >= 1.0f)
+			{
+				_isLerping = false;
+				girl.SetActive(false);
+				
+			}
+		}
+	}
+
 }
