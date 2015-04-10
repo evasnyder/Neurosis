@@ -12,7 +12,8 @@ public class firstDoorToOpen : MonoBehaviour {
 
 	public bool doorHit = false; //used for playaudio.cs
 	public bool doorSlammed = false; //also used for audio
-	public PaperPickUp roomKey;
+	public PaperPickUp cassette;
+	public PaperPickUp cassetteplayer;
 	
 	// Use this for initialization
 	void Start () {
@@ -30,7 +31,7 @@ public class firstDoorToOpen : MonoBehaviour {
 	}
 	
 	IEnumerator OnTriggerEnter (Collider other){
-		if((other.collider.name == "OVRPlayerController")&(roomKey.pickedUp)){
+		if((other.collider.name == "OVRPlayerController")&(cassette.pickedUp)&(cassetteplayer.pickedUp)){
 			audioManager.Play (1);
 			doorHit = true;
 			print ("open door");
