@@ -34,6 +34,7 @@ public class PaperPickUp : MonoBehaviour {
 				
 				//new Vector3(-.17f, -.498f,.65f);
 				pickedUp = true;
+				Debug.Log ("it should work");
 				
 				doorLock.SetActive (false);
 			}
