@@ -25,7 +25,8 @@ public class PaperPickUp : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (collision & !pickedUp) {
-			if (Input.GetKey (KeyCode.X)) {
+			if (Input.GetMouseButtonDown(0)){
+			//if (Input.GetKey (KeyCode.X)) {
 				
 				note.transform.parent = player.transform;
 				//if(!pickedUp){
