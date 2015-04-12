@@ -11,6 +11,8 @@ public class CameraCollide : MonoBehaviour {
 	public bool jiggle = false;
 	private bool alreadyTriggered;
 
+	public Rigidbody door;  
+
 	// Use this for initialization
 	void Start () {
 		alreadyTriggered = false;
@@ -20,7 +22,8 @@ public class CameraCollide : MonoBehaviour {
 		}
 
 	}
-	
+
+
 	// Update is called once per frame
 	void Update () {
 	
