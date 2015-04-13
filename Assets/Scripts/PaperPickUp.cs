@@ -17,6 +17,8 @@ public class PaperPickUp : MonoBehaviour {
 
 	public bool pickedUp = false;
 
+	public GameObject hand;
+
 	// Use this for initialization
 	void Start () {
 		infoText.SetActive (false);
@@ -32,6 +34,8 @@ public class PaperPickUp : MonoBehaviour {
 				//if(!pickedUp){
 				//note.transform.Translate (player.transform.position.x+1, 0, player.transform.position.z+1); //= 
 				note.transform.localPosition = new Vector3 (.44f, -.498f, .65f);
+				hand.transform.parent = player.transform;
+				hand.transform.localPosition = new Vector3(.44f, -.498f, .65f);
 				
 				//new Vector3(-.17f, -.498f,.65f);
 				pickedUp = true;

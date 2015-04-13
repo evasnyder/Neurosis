@@ -1,0 +1,117 @@
+fileFormatVersion: 2
+guid: a3462972814a14a3aae3981b29b07cfa
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: cassetteplayer_rig_v1_2:bottomtape_JT
+    100002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+    100004: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+    100006: cassetteplayer_rig_v1_2:tapewhole_JT
+    100008: cassetteplayer_rig_v1_2:toptape_JT
+    100010: //RootNode
+    100012: herohand_rig_v1_5:herohand_JT_Elbow
+    100014: herohand_rig_v1_5:herohand_JT_MiddleBase
+    100016: herohand_rig_v1_5:herohand_JT_MiddleEnd
+    100018: herohand_rig_v1_5:herohand_JT_MiddleMid
+    100020: herohand_rig_v1_5:herohand_JT_Palm
+    100022: herohand_rig_v1_5:herohand_JT_PinkyBase
+    100024: herohand_rig_v1_5:herohand_JT_PinkyEnd
+    100026: herohand_rig_v1_5:herohand_JT_PinkyMid
+    100028: herohand_rig_v1_5:herohand_JT_PointBase
+    100030: herohand_rig_v1_5:herohand_JT_PointEnd
+    100032: herohand_rig_v1_5:herohand_JT_PointMid
+    100034: herohand_rig_v1_5:herohand_JT_RingBase
+    100036: herohand_rig_v1_5:herohand_JT_RingEnd
+    100038: herohand_rig_v1_5:herohand_JT_RingMid
+    100040: herohand_rig_v1_5:herohand_JT_ThumbBase
+    100042: herohand_rig_v1_5:herohand_JT_ThumbMid
+    100044: herohand_rig_v1_5:herohand_JT_ThumbPalm
+    100046: herohand_rig_v1_5:herohand_JT_Wrist
+    100048: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+    400000: cassetteplayer_rig_v1_2:bottomtape_JT
+    400002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+    400004: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+    400006: cassetteplayer_rig_v1_2:tapewhole_JT
+    400008: cassetteplayer_rig_v1_2:toptape_JT
+    400010: //RootNode
+    400012: herohand_rig_v1_5:herohand_JT_Elbow
+    400014: herohand_rig_v1_5:herohand_JT_MiddleBase
+    400016: herohand_rig_v1_5:herohand_JT_MiddleEnd
+    400018: herohand_rig_v1_5:herohand_JT_MiddleMid
+    400020: herohand_rig_v1_5:herohand_JT_Palm
+    400022: herohand_rig_v1_5:herohand_JT_PinkyBase
+    400024: herohand_rig_v1_5:herohand_JT_PinkyEnd
+    400026: herohand_rig_v1_5:herohand_JT_PinkyMid
+    400028: herohand_rig_v1_5:herohand_JT_PointBase
+    400030: herohand_rig_v1_5:herohand_JT_PointEnd
+    400032: herohand_rig_v1_5:herohand_JT_PointMid
+    400034: herohand_rig_v1_5:herohand_JT_RingBase
+    400036: herohand_rig_v1_5:herohand_JT_RingEnd
+    400038: herohand_rig_v1_5:herohand_JT_RingMid
+    400040: herohand_rig_v1_5:herohand_JT_ThumbBase
+    400042: herohand_rig_v1_5:herohand_JT_ThumbMid
+    400044: herohand_rig_v1_5:herohand_JT_ThumbPalm
+    400046: herohand_rig_v1_5:herohand_JT_Wrist
+    400048: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+    4300000: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+    4300002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+    4300004: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+    13700002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+    13700004: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
