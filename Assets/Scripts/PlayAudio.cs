@@ -28,6 +28,9 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject paper2;
 	Room1PickUp pickPaper2;
 
+	public GameObject hand;
+	public GameObject player;
+
 
 
 	//	this is the gameObject appear which is set to "Desk" in the inspector 
@@ -70,6 +73,7 @@ public class PlayAudio : MonoBehaviour {
         
 		if (cameraCollide.inTheHall == true) {
             audioManager.FadeOut (11);
+			Debug.Log ("FADE TEH FUCK OUT");
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
            // audioManager.FadeIn (8);
@@ -90,6 +94,14 @@ public class PlayAudio : MonoBehaviour {
 			if(paperSound == false){
 				//audioManager.Play (15);
 				audioManager.Play (24);
+			//if(audioManager.isItPlaying(24) == true){
+				hand.transform.parent = player.transform;
+				hand.transform.localPosition = new Vector3(.44f, -1.27f, .65f);
+				//}else{
+				//hand.transform.localPosition = new Vector3(-8.0f,0.0f,-1.0f);
+				//	Debug.Log ("go away");
+			//}
+
 				paperSound = true;
 			}
 		}

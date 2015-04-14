@@ -56,8 +56,12 @@ ModelImporter:
     4300000: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
     4300002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
     4300004: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
-    7400000: Take 001
+    7400000: Holding
+    7400002: 'Turning it on '
+    7400004: playing
+    7400006: turning it off
     9500000: //RootNode
+    11100000: //RootNode
     13700000: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
     13700002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
     13700004: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
@@ -76,7 +80,311 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Holding
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 69
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:bottomtape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:toptape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid/herohand_rig_v1_5:herohand_JT_MiddleEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid/herohand_rig_v1_5:herohand_JT_PinkyEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid/herohand_rig_v1_5:herohand_JT_PointEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid/herohand_rig_v1_5:herohand_JT_RingEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase/herohand_rig_v1_5:herohand_JT_ThumbMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: 'Turning it on '
+      takeName: Take 001
+      firstFrame: 73
+      lastFrame: 130
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:bottomtape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:toptape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid/herohand_rig_v1_5:herohand_JT_MiddleEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid/herohand_rig_v1_5:herohand_JT_PinkyEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid/herohand_rig_v1_5:herohand_JT_PointEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid/herohand_rig_v1_5:herohand_JT_RingEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase/herohand_rig_v1_5:herohand_JT_ThumbMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: playing
+      takeName: Take 001
+      firstFrame: 132
+      lastFrame: 200
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:bottomtape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:toptape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid/herohand_rig_v1_5:herohand_JT_MiddleEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid/herohand_rig_v1_5:herohand_JT_PinkyEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid/herohand_rig_v1_5:herohand_JT_PointEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid/herohand_rig_v1_5:herohand_JT_RingEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase/herohand_rig_v1_5:herohand_JT_ThumbMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    - serializedVersion: 16
+      name: turning it off
+      takeName: Take 001
+      firstFrame: 202
+      lastFrame: 258
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:bottomtape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model/cassetteplayer_rig_v1_2:tapewhole_JT/cassetteplayer_rig_v1_2:toptape_JT
+        weight: 1
+      - path: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_MiddleBase/herohand_rig_v1_5:herohand_JT_MiddleMid/herohand_rig_v1_5:herohand_JT_MiddleEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PinkyBase/herohand_rig_v1_5:herohand_JT_PinkyMid/herohand_rig_v1_5:herohand_JT_PinkyEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_PointBase/herohand_rig_v1_5:herohand_JT_PointMid/herohand_rig_v1_5:herohand_JT_PointEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_Palm/herohand_rig_v1_5:herohand_JT_RingBase/herohand_rig_v1_5:herohand_JT_RingMid/herohand_rig_v1_5:herohand_JT_RingEnd
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_JT_Elbow/herohand_rig_v1_5:herohand_JT_Wrist/herohand_rig_v1_5:herohand_JT_ThumbPalm/herohand_rig_v1_5:herohand_JT_ThumbBase/herohand_rig_v1_5:herohand_JT_ThumbMid
+        weight: 1
+      - path: herohand_rig_v1_5:herohand_modelforrig_v1_1:hero_hand
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -112,6 +420,6 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 1
   additionalBone: 0
   userData: 
