@@ -11,7 +11,7 @@ public class PaperPickUp : MonoBehaviour {
 	public GameObject note;
 	public GameObject player;
 	//public GameObject light;
-	public GameObject doorLock;
+	//public GameObject doorLock;
 	public GameObject infoText;
 	private bool collision = false;
 
@@ -21,6 +21,7 @@ public class PaperPickUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		//infoText = GameObject.Find ("InstructionPlane");
 		infoText.SetActive (false);
 	}
 	
@@ -41,7 +42,7 @@ public class PaperPickUp : MonoBehaviour {
 				pickedUp = true;
 				Debug.Log ("it should work");
 				
-				doorLock.SetActive (false);
+				//doorLock.SetActive (false);
 			}
 		}
 	}
@@ -52,7 +53,7 @@ public class PaperPickUp : MonoBehaviour {
 	//	print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 
 		if (info.collider.name == "OVRPlayerController") {
-			infoText.SetActive(true);
+			//infoText.SetActive(true);
 			collision=true;
 			//}
 
@@ -64,7 +65,7 @@ public class PaperPickUp : MonoBehaviour {
 	}
 	void OnTriggerExit(Collider info){
 		if (info.collider.name == "OVRPlayerController") {
-			infoText.SetActive (false);
+			//infoText.SetActive (false);
 			collision=false;
 		}
 	}

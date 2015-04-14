@@ -4,6 +4,7 @@ using System.Collections;
 public class firstDoorToOpen : MonoBehaviour {
 
 	public GameObject door;
+	public GameObject doorLock;
 	public GameObject audio;
 	NeurosisAudioManager audioManager;
 	private bool fogOn;
@@ -19,7 +20,8 @@ public class firstDoorToOpen : MonoBehaviour {
 	void Start () {
 		audioManager = audio.GetComponent<NeurosisAudioManager> ();
 		fogOn = false;
-		
+		//cassette = (PaperPickUp)GameObject.Find("Room 0 Cassette").GetComponent("PaperPickUp");
+		//cassetteplayer = (PaperPickUp)GameObject.Find ("cassetteplayer_model").GetComponent("PaperPickUp");
 	}
 	
 	// Update is called once per frame
@@ -34,6 +36,7 @@ public class firstDoorToOpen : MonoBehaviour {
 		if((other.collider.name == "OVRPlayerController")&(cassette.pickedUp)&(cassetteplayer.pickedUp)){
 			audioManager.Play (1);
 			doorHit = true;
+			doorLock.SetActive(false);
 			print ("open door");
 			door.animation ["Take 001"].speed = 1;
 			door.animation.Play ("Take 001");
