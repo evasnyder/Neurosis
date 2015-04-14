@@ -40,7 +40,7 @@ public class Scares : MonoBehaviour {
 	/// LERPING STUFF
 	/// 
 
-	public float timeTakenDuringLerp = 0.2f;
+	private float timeTakenDuringLerp = 0.2f;
 	private bool _isLerping;
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;

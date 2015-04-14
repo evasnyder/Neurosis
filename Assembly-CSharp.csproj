@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\FirstItemPickup.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
@@ -73,6 +74,7 @@
      <Compile Include="Assets\Scripts\Room1PickUp.cs" />
      <Compile Include="Assets\Scripts\Run.cs" />
      <Compile Include="Assets\Scripts\Scares.cs" />
+     <Compile Include="Assets\Scripts\ThrowThis.cs" />
      <Compile Include="Assets\Scripts\deskHit.cs" />
      <Compile Include="Assets\Scripts\firstDoorToOpen.cs" />
      <Compile Include="Assets\Scripts\lightsInRoom1.cs" />
@@ -80,6 +82,7 @@
      <Compile Include="Assets\Scripts\triggerDoorOpen.cs" />
      <Compile Include="Assets\Scripts\triggerDoubleDoors.cs" />
      <Compile Include="Assets\Scripts\wallsBlood.cs" />
+     <Compile Include="Assets\TapePickUp.cs" />
      <None Include="Assets\Plugins\donotdelete.txt" />
      <None Include="Assets\Plugins\x86_64\donotdelete.txt" />
      <None Include="Assets\OVR\Shaders\TextShader3D.shader" />

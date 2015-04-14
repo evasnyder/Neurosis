@@ -26,7 +26,7 @@ public class triggerDoubleDoors : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider other){
-		if (other.collider.name == "OVRPlayerController") {
+		if (gameObject.name == "DoorDoubleOpen" && other.collider.name == "OVRPlayerController") {
 			door.animation.Play("Take 0011");
 		}
 	}
