@@ -20,6 +20,8 @@ public class Scares : MonoBehaviour {
 	//	make the little girl appear
 	public void Appear(){
 			girl.SetActive (true);	
+			girl.animation.Play ("Take 0012");
+			
 	}
 
 	//function for a jumpscare girl
@@ -40,7 +42,7 @@ public class Scares : MonoBehaviour {
 	/// LERPING STUFF
 	/// 
 
-	private float timeTakenDuringLerp = 0.2f;
+	private float timeTakenDuringLerp = 0.4f;
 	private bool _isLerping;
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;
@@ -48,6 +50,7 @@ public class Scares : MonoBehaviour {
 
 	//function for a running away girl
 	public void SlidingGirl(){
+		girl.animation.Play ("Take 0011");
 		_isLerping = true;
 		_timeStartedLerping = Time.time;
 		
@@ -63,13 +66,14 @@ public class Scares : MonoBehaviour {
 	{
 		if(_isLerping)
 		{
+			girl.animation.Play ("Take 001");
 			//We want percentage = 0.0 when Time.time = _timeStartedLerping
 			//and percentage = 1.0 when Time.time = _timeStartedLerping + timeTakenDuringLerp
 			//In other words, we want to know what percentage of "timeTakenDuringLerp" the value
 			//"Time.time - _timeStartedLerping" is.
 			float timeSinceStarted = Time.time - _timeStartedLerping;
 			float percentageComplete = timeSinceStarted / timeTakenDuringLerp;
-			
+
 			//Perform the actual lerping.  Notice that the first two parameters will always be the same
 			//throughout a single lerp-processs (ie. they won't change until we hit the space-bar again
 			//to start another lerp)

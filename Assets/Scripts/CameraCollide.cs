@@ -56,9 +56,9 @@ public class CameraCollide : MonoBehaviour {
 			}
 		}
 		if (gameObject.name == "Wall_PlainFirstScare" && player.collider.name == "OVRPlayerController"){
-			print("girl appears in the hallway");
 			if(hasScares){
 				if (alreadyTriggered==false) {
+					print("girl appears in the hallway");
 					//call Appear from JUMPSCARES.CS to make the scary object appear 
 					scareToPerform.Appear();
 					alreadyTriggered=true;
