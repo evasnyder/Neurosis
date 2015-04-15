@@ -19,17 +19,28 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject firstTape;
 	PaperPickUp tapePickup;
 
+	public GameObject secondTape;
+	PaperPickUp tapePickUp2;
+
+	public GameObject thirdTape;
+	PaperPickUp tapePickUp3;
+
 	bool banged;
 	bool paperSound = false;
 	bool paperSound2 = false;
+	bool paperSound3 = false;
 
 	float knockTime = 2.0f;
 
-	public GameObject paper2;
-	Room1PickUp pickPaper2;
+	//public GameObject paper2;
+	//Room1PickUp pickPaper2;
 
 	public GameObject hand;
 	public GameObject player;
+
+	float firstTapeTimer = 15.0f;
+	float secondTapeTimer = 19.0f;
+	float thirdTapeTimer = 17.0f;
 
 
 
@@ -52,7 +63,9 @@ public class PlayAudio : MonoBehaviour {
 		opener = door.GetComponent<firstDoorToOpen>();
 		tapePlayerPickup = tapePlayer.GetComponent<PaperPickUp>();
 		tapePickup = firstTape.GetComponent<PaperPickUp> ();
-		pickPaper2 = paper2.GetComponent<Room1PickUp>();
+		tapePickUp2 = secondTape.GetComponent<PaperPickUp> ();
+		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
+		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
     }
     
@@ -90,30 +103,41 @@ public class PlayAudio : MonoBehaviour {
         }
 
 		if (tapePlayerPickup.pickedUp == true && tapePickup.pickedUp == true) {
-			Debug.Log ("blah blah");
-			if(paperSound == false){
-				//audioManager.Play (15);
-				audioManager.Play (24);
-			//if(audioManager.isItPlaying(24) == true){
-				hand.transform.parent = player.transform;
-				hand.transform.localPosition = new Vector3(.44f, -1.27f, .65f);
-				//}else{
-				//hand.transform.localPosition = new Vector3(-8.0f,0.0f,-1.0f);
-				//	Debug.Log ("go away");
-			//}
-
-				paperSound = true;
+			if(!paperSound){
+			audioManager.Play (24);
 			}
-		}
+			paperSound = true;
+			handAppear (firstTapeTimer);
+			firstTapeTimer-=Time.deltaTime;
+			}
 
-		if (pickPaper2.pickedUp == true) {
+		if (tapePickUp2.pickedUp == true) {
+			if(!paperSound2){
+				audioManager.Play (25);
+			}
+			paperSound2 = true;
+			handAppear (secondTapeTimer);
+            secondTapeTimer-=Time.deltaTime;
+        }
+
+		if (tapePickUp3.pickedUp == true) {
+			if(!paperSound3){
+				audioManager.Play (26);
+			}
+			paperSound3 = true;
+			handAppear (thirdTapeTimer);
+            thirdTapeTimer-=Time.deltaTime;
+        }
+
+
+	/*	if (pickPaper2.pickedUp == true) {
 			if(paperSound2 == false){
 				audioManager.Play (15);
 				audioManager.Play (25);
 				paperSound2 = true;
 			}
 		}
-	
+	*/
 	}
     
 void knocking(){
@@ -129,4 +153,26 @@ void knocking(){
 
 
 		}
+
+	void handAppear(float timer){
+		if (timer > 0) {
+			hand.transform.parent = player.transform;
+			hand.transform.localPosition = new Vector3 (.44f, -1.27f, .65f);
+			if(timer>14){
+			hand.animation.Play ("TurningOn");
+			}
+					else if(timer>1){
+			hand.animation.Play ("playing");
+					}
+					else{
+						hand.animation.Play("turning it off");
+					}
+			timer-=Time.deltaTime;
+
+		} else{
+
+			hand.transform.localPosition = new Vector3 (0.0f, 0.0f, 50.0f);
+			
+		}
+	}
 }

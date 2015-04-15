@@ -57,7 +57,7 @@ ModelImporter:
     4300002: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassetteplayer_model
     4300004: cassetteplayer_rig_v1_2:cassetteplayer_model_v1_6_forrig_:cassettetape_model
     7400000: Holding
-    7400002: 'Turning it on '
+    7400002: TurningOn
     7400004: playing
     7400006: turning it off
     9500000: //RootNode
@@ -158,7 +158,7 @@ ModelImporter:
       maskType: 0
       maskSource: {instanceID: 0}
     - serializedVersion: 16
-      name: 'Turning it on '
+      name: TurningOn
       takeName: Take 001
       firstFrame: 73
       lastFrame: 130
