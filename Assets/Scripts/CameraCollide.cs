@@ -10,6 +10,7 @@ public class CameraCollide : MonoBehaviour {
 	public bool inTheHall = false;
 	public bool jiggle = false;
 	private bool alreadyTriggered;
+	private bool alreadyTriggered2;
 
 	public Rigidbody door;  
 
@@ -42,6 +43,17 @@ public class CameraCollide : MonoBehaviour {
 		if (gameObject.name == "hallBrick" && info.collider.name == "OVRPlayerController") { 
 			inTheHall = true;
 			Debug.Log ("halling around");
+		}
+
+		if (gameObject.name == "Wall_Plain_RunThroughGirl" && info.collider.name == "OVRPlayerController") {
+			if (hasScares) {
+				if (alreadyTriggered2==false) {
+				print ("girls runs through the wall");
+				//girl that slides away
+				scareToPerform.RunThroughGirl();
+					alreadyTriggered2=true;
+				}
+			}
 		}
 	
 

@@ -86,7 +86,7 @@ public class PlayAudio : MonoBehaviour {
         
 		if (cameraCollide.inTheHall == true) {
             audioManager.FadeOut (11);
-			Debug.Log ("FADE TEH FUCK OUT");
+			//Debug.Log ("FADE TEH FUCK OUT");
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
            // audioManager.FadeIn (8);

@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FirstItemPickup.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCameraRig.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRCommon.cs" />
      <Compile Include="Assets\OVR\Scripts\OVRDisplay.cs" />
@@ -65,6 +64,7 @@
      <Compile Include="Assets\OVR\Scripts\Util\OVRVisionGuide.cs" />
      <Compile Include="Assets\Scripts\CameraCollide.cs" />
      <Compile Include="Assets\Scripts\DoorHit.cs" />
+     <Compile Include="Assets\Scripts\FirstItemPickup.cs" />
      <Compile Include="Assets\Scripts\Knocking.cs" />
      <Compile Include="Assets\Scripts\Letter.cs" />
      <Compile Include="Assets\Scripts\NeurosisAudioManager.cs" />

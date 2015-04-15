@@ -42,7 +42,7 @@ public class Scares : MonoBehaviour {
 	/// LERPING STUFF
 	/// 
 
-	private float timeTakenDuringLerp = 0.4f;
+	private float timeTakenDuringLerp = 0.5f;
 	private bool _isLerping;
 	private Vector3 _startPosition;
 	private Vector3 _endPosition;
@@ -59,6 +59,21 @@ public class Scares : MonoBehaviour {
 		
 		_endPosition = new Vector3 (2.4f, 1f, -18.27f);
 
+	}
+
+	
+	//function for a running through walls girl
+	public void RunThroughGirl(){
+		girl.SetActive (true);
+		girl.animation.Play ("Take 0011");
+		_isLerping = true;
+		_timeStartedLerping = Time.time;
+		
+		//We set the start position to the current position, and the finish to 10 spaces in the 'forward' direction
+		_startPosition = girl.transform.position;
+		
+		_endPosition = new Vector3 (13.35f, 1f, -59.5f);
+		
 	}
 	
 	//We do the actual interpolation in FixedUpdate(), since we're dealing with a rigidbody
