@@ -60,7 +60,7 @@ public class CameraCollide : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider player){
-		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController"){
+		if (gameObject.name == "Wall_Plain_StairsScare" && player.collider.name == "OVRPlayerController"){
 			print("girl appears on stairs");
 			if (hasScares) {
 			//call Appear from JUMPSCARES.CS to make the scary object appear 
@@ -95,7 +95,7 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerExit(Collider player){
 		//girl on stairs
-		if (gameObject.name == "RadiatorScare" && player.collider.name == "OVRPlayerController") {
+		if (gameObject.name == "Wall_Plain_StairsScare" && player.collider.name == "OVRPlayerController") {
 			if (hasScares) {
 				print ("girls disappears at stairs");
 				scareToPerform.Dissapear ();
