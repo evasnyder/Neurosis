@@ -16,7 +16,11 @@ public class FirstItemPickup : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+		if (collision & !pickedUp) {
+			if (Input.GetMouseButtonDown (0)) {
+				pickedUp = true;
+			}
+		}
 	}
 	
 	void OnTriggerEnter(Collider info)
@@ -26,8 +30,7 @@ public class FirstItemPickup : MonoBehaviour {
 		
 		if (!pickedUp & (info.collider.name == "cassetteplayer_model" | info.collider.name=="Room 0 Cassette")) {
 			infoText.SetActive(true);
-			pickedUp=true;
-
+			collision=true;
 		}
 		
 		
@@ -35,7 +38,7 @@ public class FirstItemPickup : MonoBehaviour {
 	void OnTriggerExit(Collider info){
 		if (info.collider.name == "cassetteplayer_model" | info.collider.name=="Room 0 Cassette") {
 			infoText.SetActive (false);
-
+			collision=false;
 		}
 	}
 }
