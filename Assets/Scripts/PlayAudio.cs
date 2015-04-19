@@ -37,6 +37,7 @@ public class PlayAudio : MonoBehaviour {
 
 	public GameObject hand;
 	public GameObject player;
+	public GameObject camera;
 
 	float firstTapeTimer = 15.0f;
 	float secondTapeTimer = 19.0f;
@@ -67,6 +68,7 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
+
     }
     
     // Update is called once per frame
@@ -156,8 +158,8 @@ void knocking(){
 
 	void handAppear(float timer){
 		if (timer > 0) {
-			hand.transform.parent = player.transform;
-			hand.transform.localPosition = new Vector3 (.44f, -1.27f, .65f);
+			//hand.transform.parent = camera.transform;
+			hand.transform.localPosition = new Vector3 (.81f, -2.19f, .65f);
 			if(timer>14){
 			hand.animation.Play ("TurningOn");
 			}
