@@ -49,22 +49,24 @@ public class TeleportScript : MonoBehaviour {
 
 	}
 	
-	void onTriggerEnter(Collider info){
+	void OnTriggerEnter(Collider info){
+		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in TeleportScript");
 		Vector3 teleportTo;
 		if (gameObject.name == "TeleportTrigger" && info.collider.name == "OVRPlayerController") { 
 			print ("TRIGGEREDTOTELEPORT1");
-			teleportTo = new Vector3 (player.transform.position.x - 50f, player.transform.position.y, player.transform.position.z);
+			moveRight();
 		} else if (info == frontDoor) {
 			teleportTo = new Vector3 (backDoor.transform.position.x, backDoor.transform.position.y, backDoor.transform.position.z);
+			player.transform.position = teleportTo;
 			print ("TRIGGEREDTOTELEPORT2");
 		} else if (info == backDoor) {
 			print ("TRIGGEREDTOTELEPORT3");
 			teleportTo = new Vector3 (frontDoor.transform.position.x, frontDoor.transform.position.y, frontDoor.transform.position.z);
+			player.transform.position = teleportTo;
 		} else {
 			print ("TRIGGEREDTOTELEPORT?");
 			teleportTo = new Vector3 (player.transform.position.x, player.transform.position.y, player.transform.position.z);
 		}
-		player.transform.position = teleportTo;
 	}
 
 	/*IEnumerator respawn(Collider toRespawn){

@@ -5,30 +5,39 @@ public class ThrowThis : MonoBehaviour {
 
 	//controls how hard the object will be thrown
 	//changing the mass of the object is key, mass should be about 0.1
-	private float force = 400;
+	private float force = 50;
 	//keeps track of if the thing has been thrown or not
 	private GameObject throwObject;
 	private GameObject player;
+	int i = 0;
 
 
 	// Use this for initialization
 	void Start () {
 		//invokeRepeating to throw again, look up documentation for parameters
-		Invoke ("shakeObj", 20f);
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
-		throwObject = this.gameObject;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
 	}
+	public void startThrowing (){
+		InvokeRepeating ("throwObj", 10f, 15f);
+
+	}
 
 
 	void throwObj (){
 		print ("Kicked");
+		throwObject = GameObject.FindGameObjectsWithTag("ThrowThis")[i];
 		throwObject.transform.LookAt (player.transform.up);
+		throwObject.rigidbody.useGravity = true;
 		throwObject.rigidbody.AddForce (transform.forward * force);
+		i++;
+		if (i == 6) {
+			i=0;
+		}
 		}
 
 	void shakeObj (){
