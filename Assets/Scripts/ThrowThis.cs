@@ -5,7 +5,7 @@ public class ThrowThis : MonoBehaviour {
 
 	//controls how hard the object will be thrown
 	//changing the mass of the object is key, mass should be about 0.1
-	private float force = 50;
+	private float force = 70;
 	//keeps track of if the thing has been thrown or not
 	private GameObject throwObject;
 	private GameObject player;
@@ -33,7 +33,8 @@ public class ThrowThis : MonoBehaviour {
 		throwObject = GameObject.FindGameObjectsWithTag("ThrowThis")[i];
 		throwObject.transform.LookAt (player.transform.up);
 		throwObject.rigidbody.useGravity = true;
-		throwObject.rigidbody.AddForce (transform.forward * force);
+		print (Vector3.Distance (player.transform.position, throwObject.transform.position));
+		throwObject.rigidbody.AddForce (transform.forward);
 		i++;
 		if (i == 6) {
 			i=0;

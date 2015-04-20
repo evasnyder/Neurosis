@@ -11,32 +11,24 @@ public class CameraCollide : MonoBehaviour {
 	public bool jiggle = false;
 	private bool alreadyTriggered;
 	private bool alreadyTriggered2;
-	private bool alreadyTeleported;
 	public Rigidbody door;  
 	private GameObject player;
-	TeleportScript Tscript;
 	ThrowThis ThrowScript;
 
 	// Use this for initialization
 	void Start () {
 		alreadyTriggered = false;
-		alreadyTeleported = true;
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
 			scareToPerform = scares.GetComponent<Scares> ();
 		}
-		player = GameObject.FindGameObjectsWithTag("Player")[0];
-		Tscript = GameObject.Find("TeleportTrigger").GetComponent<TeleportScript>();
-		ThrowScript = new ThrowThis();
+		ThrowScript = GameObject.Find("ThrowTrigger").GetComponent<ThrowThis>();
 	}
 
 
 	// Update is called once per frame
 	void Update () {
-		if (!alreadyTeleported) {
-			Tscript.moveRight();
-			alreadyTeleported = true;
-		}
+
 	}
 
 	void OnTriggerEnter(Collider info)
@@ -44,20 +36,6 @@ public class CameraCollide : MonoBehaviour {
 		print ("Detected collision between " + gameObject.name + " and " + info.collider.name + " in CameraCollide");
 		if (gameObject.name == "ThrowTrigger" && info.collider.name == "OVRPlayerController") {
 			ThrowScript.startThrowing();
-		}
-		if (gameObject.name == "TeleportTrigger" && info.collider.name == "OVRPlayerController") { 
-			//GameObject player = GameObject.FindGameObjectsWithTag("Player")[0];
-			/*print ("TRIGGEREDTOTELEPORT1");
-			Vector3 toRight = new Vector3 (player.transform.position.x-50f, player.transform.position.y, player.transform.position.z);
-			print ("X: " + player.transform.position.x);
-			print ("Y: " + player.transform.position.y);
-			print ("Z: " + player.transform.position.z);
-			player.transform.position = toRight;
-			print ("X: " + player.transform.position.x);
-			print ("Y: " + player.transform.position.y);
-			print ("Z: " + player.transform.position.z);*/
-			Tscript.moveRight();
-
 		}
 
 		//if the object that was collided with was the desk and what collided with it 
