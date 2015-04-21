@@ -43,6 +43,12 @@ public class PlayAudio : MonoBehaviour {
 	float secondTapeTimer = 19.0f;
 	float thirdTapeTimer = 17.0f;
 
+	int tapeOneLoc;
+	int tapeTwoLoc;
+	int tapeThreeLoc;
+
+	bool placed = false;
+
 
 
 	//	this is the gameObject appear which is set to "Desk" in the inspector 
@@ -55,7 +61,9 @@ public class PlayAudio : MonoBehaviour {
     
     // Use this for initialization
     void Start () {
-
+		tapeOneLoc = Random.Range (1, 4);
+		tapeTwoLoc = Random.Range (1, 4);
+		tapeThreeLoc = Random.Range (1, 4);
 		//	setting the audioManager to type NeurosisAudioManager
         audioManager = audio.GetComponent<NeurosisAudioManager> ();
 		//	setting the cameraCollide to type CameraCollide 
@@ -68,11 +76,15 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
-
+        
     }
     
     // Update is called once per frame
     void Update () {
+
+		if (!placed) {
+			placeTapes();
+		}
 
 		if (cameraCollide.jiggle) {
 			audioManager.Play (28);
@@ -88,7 +100,6 @@ public class PlayAudio : MonoBehaviour {
         
 		if (cameraCollide.inTheHall == true) {
             audioManager.FadeOut (11);
-			//Debug.Log ("FADE TEH FUCK OUT");
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
            // audioManager.FadeIn (8);
@@ -131,15 +142,6 @@ public class PlayAudio : MonoBehaviour {
             thirdTapeTimer-=Time.deltaTime;
         }
 
-
-	/*	if (pickPaper2.pickedUp == true) {
-			if(paperSound2 == false){
-				audioManager.Play (15);
-				audioManager.Play (25);
-				paperSound2 = true;
-			}
-		}
-	*/
 	}
     
 void knocking(){
@@ -158,7 +160,6 @@ void knocking(){
 
 	void handAppear(float timer){
 		if (timer > 0) {
-			//hand.transform.parent = camera.transform;
 			hand.transform.localPosition = new Vector3 (.81f, -2.19f, .65f);
 			if(timer>14){
 			hand.animation.Play ("TurningOn");
@@ -177,4 +178,21 @@ void knocking(){
 			
 		}
 	}
+
+	void placeTapes(){
+		if (tapeOneLoc == 1) {
+			firstTape.transform.position = new Vector3(5.442f,2.641f,1.309f);
+		}
+		if (tapeOneLoc == 2) {
+			firstTape.transform.position = new Vector3(-1.785f,2.038f,5.43f);
+		}
+		
+		if (tapeTwoLoc == 1) {
+			secondTape.transform.position = new Vector3(62.41f,.023f,-33.6f);
+		}
+		if (tapeTwoLoc == 2) {
+			secondTape.transform.position = new Vector3(53.98f, .957f, -24.28f);
+        }
+		placed = true;
+    }
 }
