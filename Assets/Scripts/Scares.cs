@@ -57,7 +57,7 @@ public class Scares : MonoBehaviour {
 		//We set the start position to the current position, and the finish to 10 spaces in the 'forward' direction
 		_startPosition = girl.transform.position;
 		
-		_endPosition = new Vector3 (2.4f, 1f, -18.27f);
+		_endPosition = new Vector3 (2.562f, 0.87f, -47.86f);
 
 	}
 
