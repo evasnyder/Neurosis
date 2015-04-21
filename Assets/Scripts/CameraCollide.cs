@@ -10,14 +10,25 @@ public class CameraCollide : MonoBehaviour {
 	public bool inTheHall = false;
 	public bool jiggle = false;
 	private bool alreadyTriggered;
-	private bool alreadyTriggered2;
+
 	public Rigidbody door;  
 	private GameObject player;
 	ThrowThis ThrowScript;
 
+	//girl booleans
+	private bool first_Trig;
+	private bool jumpScare_Trig;
+	private bool runThrough_Trig;
+	private bool stairs_Trig;
 	// Use this for initialization
 	void Start () {
+
 		alreadyTriggered = false;
+		first_Trig = false;//
+		jumpScare_Trig = false;//
+		runThrough_Trig = false;//
+		stairs_Trig = false;//
+
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
 			scareToPerform = scares.GetComponent<Scares> ();
@@ -51,11 +62,11 @@ public class CameraCollide : MonoBehaviour {
 
 		if (gameObject.name == "Wall_Plain_RunThroughGirl" && info.collider.name == "OVRPlayerController") {
 			if (hasScares) {
-				if (alreadyTriggered2==false) {
+				if (runThrough_Trig==false) {
 				print ("girls runs through the wall");
 				//girl that slides away
 				scareToPerform.RunThroughGirl();
-					alreadyTriggered2=true;
+					runThrough_Trig=true;
 				}
 			}
 		}
@@ -67,17 +78,20 @@ public class CameraCollide : MonoBehaviour {
 		if (gameObject.name == "Wall_Plain_StairsScare" && player.collider.name == "OVRPlayerController"){
 			print("girl appears on stairs");
 			if (hasScares) {
-			//call Appear from JUMPSCARES.CS to make the scary object appear 
-			scareToPerform.Appear();
+				if (stairs_Trig==false) {
+					//call Appear from JUMPSCARES.CS to make the scary object appear 
+					scareToPerform.Appear();
+					stairs_Trig=true;
+				}
 			}
 		}
 		if (gameObject.name == "Wall_PlainFirstScare" && player.collider.name == "OVRPlayerController"){
 			if(hasScares){
-				if (alreadyTriggered==false) {
+				if (first_Trig==false) {
 					print("girl appears in the hallway");
 					//call Appear from JUMPSCARES.CS to make the scary object appear 
 					scareToPerform.Appear();
-					alreadyTriggered=true;
+					first_Trig=true;
 				}
 			}
 
@@ -89,9 +103,12 @@ public class CameraCollide : MonoBehaviour {
 		//girl jumpscare
 		if (gameObject.name == "BedFrameJumpScare" && player.collider.name == "OVRPlayerController") { 
 			if (hasScares) {
-				print("girl jumpscares at double doors");
-				//girl that jumps into the face
-				scareToPerform.ScareMe (player.transform.position, player.transform.rotation);
+				if (jumpScare_Trig==false) {
+					print("girl jumpscares at double doors");
+					//girl that jumps into the face
+					scareToPerform.ScareMe (player.transform.position, player.transform.rotation);
+					jumpScare_Trig=true;
+				}
 			}
 		}
 
