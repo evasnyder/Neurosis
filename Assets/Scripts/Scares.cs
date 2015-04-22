@@ -26,7 +26,7 @@ public class Scares : MonoBehaviour {
 
 	//function for a jumpscare girl
 	public void ScareMe(Vector3 pos, Quaternion rot){
-			girl.transform.position = new Vector3 (pos.x, 0.9f, pos.z - 1f);
+			girl.transform.position = new Vector3 (pos.x, 0.9f, pos.z - 1.5f);
 			girl.transform.rotation = rot;
 			girl.SetActive (true);
 			Invoke ("Dissapear", .3f);
