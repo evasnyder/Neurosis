@@ -8,12 +8,16 @@ public class movingWall : MonoBehaviour {
 	private Vector3 endPosition = new Vector3(15f, 8f, -47.9f);
 	float lockPos = 0;
 
+	AudioSource audio;
+
 
 	// Use this for initialization
 	void Start () {
 		wallToMove.active = false;
 		triggered = false;
 		alreadyTriggered = false;
+		audio = GetComponent<AudioSource> ();
+
 	}
 	
 	// Update is called once per frame
@@ -41,7 +45,8 @@ public class movingWall : MonoBehaviour {
 		//float rate = 1.0f/100f;
 		while (i < 100f) {
 			//	i += Time.deltaTime * rate;
-			wallToMove.transform.position = Vector3.Lerp(wallToMove.transform.position, endPosition, 0.001f);			
+			wallToMove.transform.position = Vector3.Lerp(wallToMove.transform.position, endPosition, 0.001f);	
+			audio.Play ();
 			yield return 1; 
 		}
 	}
