@@ -58,6 +58,8 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject appear;
 	//	getting cameraCollide scipt 
 	CameraCollide cameraCollide;
+
+	public Animation anim;
     
     // Use this for initialization
     void Start () {
@@ -76,6 +78,8 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
+
+		anim = GetComponent<Animation>();
         
     }
     
@@ -158,9 +162,9 @@ void knocking(){
 
 		}
 
-	void handAppear(float timer){
+	/*void handAppear(float timer){
 		if (timer > 0) {
-			hand.transform.localPosition = new Vector3 (.81f, -2.19f, .65f);
+			hand.transform.localPosition = new Vector3 (.97f, -2.32f, .65f);
 			if(timer>14){
 			hand.animation.Play ("TurningOn");
 			}
@@ -176,6 +180,21 @@ void knocking(){
 
 			hand.transform.localPosition = new Vector3 (0.0f, 0.0f, 50.0f);
 			
+		}
+	}*/
+
+	void handAppear(float timer){
+		if (timer > 0) {
+			hand.transform.localPosition = new Vector3 (.97f, -2.32f, .65f);
+			anim.PlayQueued ("TurningOn", QueueMode.PlayNow);
+			if (timer > 1) {
+				anim.PlayQueued ("playing", QueueMode.CompleteOthers);
+			} else {
+				anim.PlayQueued ("turning it off", QueueMode.CompleteOthers);
+			}
+			timer -= Time.deltaTime;
+		} else {
+			hand.transform.localPosition = new Vector3 (0.0f, 0.0f, 50.0f);
 		}
 	}
 
@@ -193,6 +212,12 @@ void knocking(){
 		if (tapeTwoLoc == 2) {
 			secondTape.transform.position = new Vector3(53.98f, .957f, -24.28f);
         }
-		placed = true;
+		if (tapeThreeLoc == 1) {
+			thirdTape.transform.position = new Vector3(-60.32f,.27f,-52.94f);
+		}
+		if (tapeThreeLoc == 2) {
+			thirdTape.transform.position = new Vector3(-66.53f,.687f,-45.856f);
+        }
+        placed = true;
     }
 }
