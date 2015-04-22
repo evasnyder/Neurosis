@@ -2,57 +2,62 @@
 using System.Collections;
 
 public class PlayAudio : MonoBehaviour {
-		
-		//	this is the game object that holds the audio manager
-		public GameObject audio;
-		//	this is the actual audio manager of type NeurosisAudioManager
-		NeurosisAudioManager audioManager;
-		
-		public GameObject door;
-		firstDoorToOpen opener;
-		
-		public GameObject tapePlayer;
-		PaperPickUp tapePlayerPickup;
-		
-		public GameObject firstTape;
-		PaperPickUp tapePickup;
-		
-		public GameObject secondTape;
-		PaperPickUp tapePickUp2;
-		
-		public GameObject thirdTape;
-		PaperPickUp tapePickUp3;
-		
-		public GameObject doubleDoor;
-		triggerDoubleDoors dDoor;
+    
+	//	this is the game object that holds the audio manager
+    public GameObject audio;
+	//	this is the actual audio manager of type NeurosisAudioManager
+    NeurosisAudioManager audioManager;
+	bool radioOn = false;
+	bool radioHit = false;
 
-		//girl, has camera collide scrip attached to her
-		public GameObject appear; 
-		CameraCollide cameraCollide;
-		
-		public GameObject hand;
-		public GameObject player;
-		public GameObject camera;
-		
-		bool banged;
-		bool paperSound = false;
-		bool paperSound2 = false;
-		bool paperSound3 = false;
-		bool radioOn = false;
-		bool radioHit = false;
-        bool placed = false; // for the tapes
-        
-        float firstTapeTimer = 15.0f;
-        float secondTapeTimer = 19.0f;
-        float thirdTapeTimer = 17.0f;
-        float knockTime = 2.0f;
-        
-        //locations of the tapes
-        int tapeOneLoc;
-		int tapeTwoLoc;
-		int tapeThreeLoc;
+	public GameObject door;
+	firstDoorToOpen opener;
 
-		//public Animation anim;
+	public GameObject tapePlayer;
+	PaperPickUp tapePlayerPickup;
+
+	public GameObject firstTape;
+	PaperPickUp tapePickup;
+
+	public GameObject secondTape;
+	PaperPickUp tapePickUp2;
+
+	public GameObject thirdTape;
+	PaperPickUp tapePickUp3;
+
+	bool banged;
+	bool paperSound = false;
+	bool paperSound2 = false;
+	bool paperSound3 = false;
+
+	float knockTime = 2.0f;
+
+	//public GameObject paper2;
+	//Room1PickUp pickPaper2;
+
+	public GameObject hand;
+	public GameObject player;
+	public GameObject camera;
+
+	float firstTapeTimer = 15.0f;
+	float secondTapeTimer = 19.0f;
+	float thirdTapeTimer = 17.0f;
+
+	int tapeOneLoc;
+	int tapeTwoLoc;
+	int tapeThreeLoc;
+
+	bool placed = false;
+
+
+
+	//	this is the gameObject appear which is set to "Desk" in the inspector 
+	// 	because it has to pull out the CameraCollide from whatever object was collided with
+	//	creating an instance of the desk in the code to reach the cameraCollide code associated 
+	//	with it
+	public GameObject appear;
+	//	getting cameraCollide scipt 
+	CameraCollide cameraCollide;
     
     // Use this for initialization
     void Start () {
@@ -69,9 +74,8 @@ public class PlayAudio : MonoBehaviour {
 		tapePickup = firstTape.GetComponent<PaperPickUp> ();
 		tapePickUp2 = secondTape.GetComponent<PaperPickUp> ();
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
+		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
-		dDoor=doubleDoor.GetComponent<triggerDoubleDoors>();
-		//anim = GetComponent<Animation>();
         
     }
     
@@ -81,6 +85,7 @@ public class PlayAudio : MonoBehaviour {
 		if (!placed) {
 			placeTapes();
 		}
+
 		if (cameraCollide.jiggle) {
 			audioManager.Play (28);
 		}
@@ -90,6 +95,7 @@ public class PlayAudio : MonoBehaviour {
 		audioManager.PlayLoop (11);
 		audioManager.PlayLoop (8);
 	
+
        // knocking();
         
 		if (cameraCollide.inTheHall == true) {
@@ -136,16 +142,6 @@ public class PlayAudio : MonoBehaviour {
             thirdTapeTimer-=Time.deltaTime;
         }
 
-			if(dDoor.shake){
-				audioManager.Play (40);
-			}
-			if(dDoor.opened){
-				audioManager.Play (31);
-			}
-			if(dDoor.closed){
-				audioManager.Play (18);
-			}
-
 	}
     
 void knocking(){
@@ -164,7 +160,7 @@ void knocking(){
 
 	void handAppear(float timer){
 		if (timer > 0) {
-			hand.transform.localPosition = new Vector3 (.97f, -2.32f, .65f);
+			hand.transform.localPosition = new Vector3 (.81f, -2.19f, .65f);
 			if(timer>14){
 			hand.animation.Play ("TurningOn");
 			}
@@ -183,21 +179,6 @@ void knocking(){
 		}
 	}
 
-	/*void handAppear(float timer){
-		if (timer > 0) {
-			hand.transform.localPosition = new Vector3 (.97f, -2.32f, .65f);
-			anim.PlayQueued ("TurningOn", QueueMode.PlayNow);
-			if (timer > 1) {
-				anim.PlayQueued ("playing", QueueMode.CompleteOthers);
-			} else {
-				anim.PlayQueued ("turning it off", QueueMode.CompleteOthers);
-			}
-			timer -= Time.deltaTime;
-		} else {
-			hand.transform.localPosition = new Vector3 (0.0f, 0.0f, 50.0f);
-		}
-	}
-*/
 	void placeTapes(){
 		if (tapeOneLoc == 1) {
 			firstTape.transform.position = new Vector3(5.442f,2.641f,1.309f);
@@ -212,12 +193,6 @@ void knocking(){
 		if (tapeTwoLoc == 2) {
 			secondTape.transform.position = new Vector3(53.98f, .957f, -24.28f);
         }
-		if (tapeThreeLoc == 1) {
-			thirdTape.transform.position = new Vector3(-60.32f,.27f,-52.94f);
-		}
-		if (tapeThreeLoc == 2) {
-			thirdTape.transform.position = new Vector3(-66.53f,.687f,-45.856f);
-        }
-        placed = true;
+		placed = true;
     }
 }
