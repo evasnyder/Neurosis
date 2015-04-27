@@ -20,6 +20,7 @@ public class CameraCollide : MonoBehaviour {
 	private bool jumpScare_Trig;
 	private bool runThrough_Trig;
 	private bool stairs_Trig;
+	private bool ball_Trig;
 	// Use this for initialization
 	void Start () {
 
@@ -28,7 +29,7 @@ public class CameraCollide : MonoBehaviour {
 		jumpScare_Trig = false;//
 		runThrough_Trig = false;//
 		stairs_Trig = false;//
-
+		ball_Trig = false;//
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
 			scareToPerform = scares.GetComponent<Scares> ();
@@ -70,6 +71,17 @@ public class CameraCollide : MonoBehaviour {
 				}
 			}
 		}
+
+		if (gameObject.name == "Wall_Plain_Ball" && info.collider.name == "OVRPlayerController") {
+			if (hasScares) {
+				if (ball_Trig==false) {
+					print ("ball rolled in");
+					//girl that slides away
+					scareToPerform.Ball ();
+					ball_Trig=true;
+				}
+			}
+		}
 	
 
 	}
@@ -101,12 +113,12 @@ public class CameraCollide : MonoBehaviour {
 			Debug.Log ("fuuuuuuuuck");
         }
 		//girl jumpscare
-		if (gameObject.name == "BedFrameJumpScare" && player.collider.name == "OVRPlayerController") { 
+		if (gameObject.name == "Wall_Plain_OpenMouthScare" && player.collider.name == "OVRPlayerController") { 
 			if (hasScares) {
 				if (jumpScare_Trig==false) {
-					print("girl jumpscares at double doors");
+					print("girl jumpscares");
 					//girl that jumps into the face
-					scareToPerform.ScareMe (player.transform.position, player.transform.rotation);
+					scareToPerform.ScareMe (player.transform);
 					jumpScare_Trig=true;
 				}
 			}
