@@ -20,8 +20,7 @@ public class cassete2pickup : MonoBehaviour
 	{
 		//infoText = GameObject.Find ("InstructionPlane");
 		infoText.SetActive (false);
-		tScript = gameObject.FindGameObjectsWithTag ("TeleportTrigger").GetComponent<TeleportScript>;
-	}
+		tScript = GameObject.Find("TeleportTrigger").GetComponent<TeleportScript>();	}
 		
 	// Update is called once per frame
 	void Update ()
@@ -39,7 +38,7 @@ public class cassete2pickup : MonoBehaviour
 					
 				//new Vector3(-.17f, -.498f,.65f);
 				pickedUp = true;
-				tScript.moveLeft();
+				tScript.goLeft = true;
 				Debug.Log ("it should work");
 					
 				//doorLock.SetActive (false);

@@ -10,10 +10,12 @@ public class TeleportScript : MonoBehaviour {
 	bool teleport;
 	public float xDifference;
 	public float zDifference;
+	public bool goLeft;
 
 	// Use this for initialization
 	void Start () {
 		player = GameObject.FindGameObjectsWithTag("Player")[0];
+		goLeft = false;
 
 	}
 	
@@ -32,6 +34,10 @@ public class TeleportScript : MonoBehaviour {
 		if (player.transform.position.x > -63f && player.transform.position.x < -60f &&
 		    player.transform.position.z > -37.8f && player.transform.position.z < -37.4f) {
 			moveForward();
+		}
+		if (goLeft == true) {
+			moveLeft();
+			goLeft = false;
 		}
 	
 	}
