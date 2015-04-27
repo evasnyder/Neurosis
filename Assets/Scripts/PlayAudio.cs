@@ -39,15 +39,20 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject player;
 	public GameObject camera;
 
-	float firstTapeTimer = 15.0f;
-	float secondTapeTimer = 19.0f;
-	float thirdTapeTimer = 17.0f;
+	float firstTapeTimer = 16.6f;
+	float secondTapeTimer = 20.5f;
+	float thirdTapeTimer = 18.5f;
+	float tapePause = 1.0f; //time for pressing the button on the cassette before audio starts
 
 	int tapeOneLoc;
 	int tapeTwoLoc;
 	int tapeThreeLoc;
 
 	bool placed = false;
+
+	public bool handUp = false;
+
+
 
 
 
@@ -116,31 +121,19 @@ public class PlayAudio : MonoBehaviour {
         }
 
 		if (tapePlayerPickup.pickedUp == true && tapePickup.pickedUp == true) {
-			if(!paperSound){
-			audioManager.Play (24);
-			}
-			paperSound = true;
-			handAppear (firstTapeTimer);
+			handAppear (firstTapeTimer, 24);
 			firstTapeTimer-=Time.deltaTime;
 			}
 
 		if (tapePickUp2.pickedUp == true) {
-			if(!paperSound2){
-				audioManager.Play (25);
-			}
-			paperSound2 = true;
-			handAppear (secondTapeTimer);
+			handAppear (secondTapeTimer,25);
             secondTapeTimer-=Time.deltaTime;
         }
 
 		if (tapePickUp3.pickedUp == true) {
-			if(!paperSound3){
-				audioManager.Play (26);
-			}
-			paperSound3 = true;
-			handAppear (thirdTapeTimer);
+			handAppear (thirdTapeTimer, 26);
             thirdTapeTimer-=Time.deltaTime;
-        }
+   }
 
 	}
     
@@ -158,26 +151,77 @@ void knocking(){
 
 		}
 
-	void handAppear(float timer){
+	void handAppear(float timer,int track){
 		if (timer > 0) {
-			hand.transform.localPosition = new Vector3 (.81f, -2.19f, .65f);
-			if(timer>14){
-			hand.animation.Play ("TurningOn");
+			handComing ();
+			if(handUp){
+			if (timer > 13) {
+					if(tapePause >0){
+						tapePause-=Time.deltaTime;
+					}else{
+				hand.animation.Play ("TurningOn");
+					if(!paperSound){
+						audioManager.Play(track);
+					}
+					paperSound = true;
+					}
+			} else if (timer > 1) {
+				hand.animation.CrossFade ("playing");
+			} else {
+				hand.animation.CrossFade ("turning it off");
 			}
-					else if(timer>1){
-			hand.animation.Play ("playing");
-					}
-					else{
-						hand.animation.Play("turning it off");
-					}
-			timer-=Time.deltaTime;
+			timer -= Time.deltaTime;
+			}
 
-		} else{
+		} else {
 
-			hand.transform.localPosition = new Vector3 (0.0f, 0.0f, 50.0f);
+			handLeaving ();
+			paperSound = false;
+			tapePause = 1.0f;
 			
 		}
 	}
+
+	void handComing(){
+		if (hand.transform.localPosition.x > .81f) {
+			Vector3 temp = hand.transform.localPosition;
+			temp.x-=.1f;
+			hand.transform.localPosition = temp;
+			handUp = false;
+		}
+		if (hand.transform.localPosition.y < -2.19f) {
+			Vector3 temp = hand.transform.localPosition;
+			temp.y+=.1f;
+			hand.transform.localPosition = temp;
+			handUp = false;
+		}
+
+
+		if (hand.transform.localPosition.x <= .81f && hand.transform.localPosition.y >= -2.19f) {
+			handUp = true;
+		}
+
+	}
+
+	void handLeaving(){
+		handUp = false;
+		if (hand.transform.localPosition.x < 2.12f) {
+			Vector3 temp = hand.transform.localPosition;
+			temp.x+=.1f;
+			hand.transform.localPosition = temp;
+
+		}
+		if (hand.transform.localPosition.y > -3.96f) {
+			Vector3 temp = hand.transform.position;
+			temp.x-=.1f;
+			hand.transform.localPosition = temp;
+
+		}
+	}
+
+
+
+
 
 	void placeTapes(){
 		if (tapeOneLoc == 1) {
@@ -193,6 +237,12 @@ void knocking(){
 		if (tapeTwoLoc == 2) {
 			secondTape.transform.position = new Vector3(53.98f, .957f, -24.28f);
         }
+		if (tapeThreeLoc == 1) {
+			thirdTape.transform.position = new Vector3(-60.28f, .029f, -53.16f);
+		}
+		if (tapeThreeLoc == 2) {
+			thirdTape.transform.position = new Vector3(-61.54f, .707f, -42.97f);
+		}
 		placed = true;
     }
 }

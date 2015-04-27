@@ -8,6 +8,7 @@ public class CameraCollide : MonoBehaviour {
 	Scares scareToPerform; //scares to activate
 	public GameObject hallBrick;
 	public bool inTheHall = false;
+	public bool inRoomOne = false;
 	public bool jiggle = false;
 	private bool alreadyTriggered;
 
@@ -82,6 +83,10 @@ public class CameraCollide : MonoBehaviour {
 				}
 			}
 		}
+
+		if (gameObject.name == "RoomOneBrick" && info.collider.name == "OVRPlayerController") {
+			inRoomOne = true;
+		}
 	
 
 	}
@@ -110,7 +115,7 @@ public class CameraCollide : MonoBehaviour {
 		}
 		if (gameObject.name == "DoorLockCube" && player.collider.name == "OVRPlayerController") {
 			jiggle = true;
-			Debug.Log ("fuuuuuuuuck");
+
         }
 		//girl jumpscare
 		if (gameObject.name == "Wall_Plain_OpenMouthScare" && player.collider.name == "OVRPlayerController") { 
