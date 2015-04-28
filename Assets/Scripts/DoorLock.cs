@@ -76,9 +76,17 @@ public class DoorLock : MonoBehaviour {
 	}
 
 	void Lock(){
+		if (cameraCollide.inRoomOne) {
+			Debug.Log ("IN ROOM ONE IS NOW TRUE");
+		}
+		if (paperPickUp.pickedUp) {
+			Debug.Log ("PICKED UP I SNOW TURE");
+		}
 		if (cameraCollide.inRoomOne && paperPickUp.pickedUp) {
 			doorLock.SetActive (false);
+			Debug.Log ("THE DOOR SHOULD BE UNLOCKED NOW");
 		} else if(cameraCollide.inRoomOne) {
+			Debug.Log ("lock is locked");
 			doorLock.SetActive (true);
 		}
 	}

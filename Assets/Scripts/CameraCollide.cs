@@ -7,6 +7,7 @@ public class CameraCollide : MonoBehaviour {
 	public GameObject scares; //assign scares
 	Scares scareToPerform; //scares to activate
 	public GameObject hallBrick;
+	public GameObject roomBrick;
 	public bool inTheHall = false;
 	public bool inRoomOne = false;
 	public bool jiggle = false;

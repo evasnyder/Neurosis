@@ -40,7 +40,7 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject camera;
 
 	float firstTapeTimer = 16.6f;
-	float secondTapeTimer = 20.5f;
+	public float secondTapeTimer = 20.5f;
 	float thirdTapeTimer = 18.5f;
 	float tapePause = 1.0f; //time for pressing the button on the cassette before audio starts
 
@@ -154,6 +154,7 @@ void knocking(){
 	void handAppear(float timer,int track){
 		if (timer > 0) {
 			handComing ();
+			Debug.Log ("Hand is now approaching");
 			if(handUp){
 			if (timer > 13) {
 					if(tapePause >0){
@@ -178,6 +179,9 @@ void knocking(){
 			handLeaving ();
 			paperSound = false;
 			tapePause = 1.0f;
+			tapePlayerPickup.pickedUp = false;
+			tapePickUp2.pickedUp = false;
+			tapePickUp3.pickedUp = false;
 			
 		}
 	}
