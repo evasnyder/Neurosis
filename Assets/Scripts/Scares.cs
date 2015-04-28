@@ -103,6 +103,8 @@ public class Scares : MonoBehaviour {
 		{
 			if (isBall) {
 				girl.transform.Rotate(Vector3.up, speed * Time.deltaTime);
+				//girl.transform.Rotate(Vector3.right, 15, Space.World);// * Time.deltaTime);
+				//girl.transform.Rotate(new Vector3(-0.5981908f,0.0f,0.0f),15,Space.World);
 			}
 			else{
 				girl.animation.Play ("Take 001");
