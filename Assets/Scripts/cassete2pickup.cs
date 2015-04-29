@@ -13,14 +13,12 @@ public class cassete2pickup : MonoBehaviour
 	private bool collision = false;
 	public bool pickedUp = false;
 	public GameObject hand;
-	private TeleportScript tScript;
 		
 	// Use this for initialization
 	void Start ()
 	{
 		//infoText = GameObject.Find ("InstructionPlane");
 		infoText.SetActive (false);
-		tScript = GameObject.Find("TeleportTrigger").GetComponent<TeleportScript>();
 	}
 		
 	// Update is called once per frame
