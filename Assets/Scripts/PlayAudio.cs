@@ -28,6 +28,9 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject fourthTape;
 	PaperPickUp tapePickUp4;
 
+	public GameObject wall;
+	movingWall movingwall;
+
 	bool banged;
 	bool paperSound = false;
 	bool paperSound2 = false;
@@ -85,6 +88,7 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp2 = secondTape.GetComponent<PaperPickUp> ();
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		tapePickUp4 = fourthTape.GetComponent<PaperPickUp> ();
+		movingwall = wall.GetComponent<movingWall> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
         
@@ -143,6 +147,16 @@ public class PlayAudio : MonoBehaviour {
 		if (tapePickUp4.pickedUp == true) {
 			handAppear (fourthTapeTimer, 31);
 			fourthTapeTimer-=Time.deltaTime;
+		}
+
+		if (opener.doorLocked == false) {
+			Debug.Log ("wiggle wiggle");
+			audioManager.Play (32);
+			opener.doorLocked = true;
+		}
+
+		if (movingwall.triggered == true && movingwall.alreadyTriggered == false) {
+			audioManager.Play (33);
 		}
 
 	}

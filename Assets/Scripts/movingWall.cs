@@ -3,8 +3,8 @@ using System.Collections;
 
 public class movingWall : MonoBehaviour {
 	public GameObject wallToMove;
-	private bool triggered;
-	private bool alreadyTriggered;
+	public bool triggered;
+	public bool alreadyTriggered;
 	private Vector3 endPosition = new Vector3(15f, 8f, -47.9f);
 	float lockPos = 0;
 
