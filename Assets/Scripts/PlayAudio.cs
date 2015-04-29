@@ -92,7 +92,7 @@ public class PlayAudio : MonoBehaviour {
 		}
 
 		if (cameraCollide.jiggle) {
-			audioManager.Play (28);
+			//audioManager.Play (28); //there is no audio 28!
 		}
 		if (cameraCollide.inTheHall== false) {
 			audioManager.SetVolume (11, .5f);

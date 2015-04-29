@@ -13,6 +13,7 @@ public class CameraCollide : MonoBehaviour {
 	public bool jiggle = false;
 	private bool alreadyTriggered;
 
+
 	public Rigidbody door;  
 	private GameObject player;
 	ThrowThis ThrowScript;
@@ -23,15 +24,17 @@ public class CameraCollide : MonoBehaviour {
 	private bool runThrough_Trig;
 	private bool stairs_Trig;
 	private bool ball_Trig;
+
 	// Use this for initialization
 	void Start () {
-
+		//scares triggers
 		alreadyTriggered = false;
 		first_Trig = false;//
 		jumpScare_Trig = false;//
 		runThrough_Trig = false;//
 		stairs_Trig = false;//
 		ball_Trig = false;//
+
 		if (hasScares) {
 			//initiallizing jumpScares to be of type SCARES.CS 
 			scareToPerform = scares.GetComponent<Scares> ();
@@ -98,7 +101,7 @@ public class CameraCollide : MonoBehaviour {
 			if (hasScares) {
 				if (stairs_Trig==false) {
 					//call Appear from JUMPSCARES.CS to make the scary object appear 
-					scareToPerform.Appear();
+					scareToPerform.Appear(true);
 					stairs_Trig=true;
 				}
 			}
@@ -108,7 +111,7 @@ public class CameraCollide : MonoBehaviour {
 				if (first_Trig==false) {
 					print("girl appears in the hallway");
 					//call Appear from JUMPSCARES.CS to make the scary object appear 
-					scareToPerform.Appear();
+					scareToPerform.Appear(false);
 					first_Trig=true;
 				}
 			}

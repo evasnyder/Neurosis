@@ -5,14 +5,17 @@ public class Scares : MonoBehaviour {
 
 	//creating an instance of the little girl
 	public GameObject girl;
-	private float speed = 25f;
+	private float speed = 500f;
 	private bool isBall;
+	public GameObject audio;
+	NeurosisAudioManager audioManager;
 
 
 	// Use this for initialization
 	void Start () {
 		girl.SetActive (false);
 		isBall = false;
+		audioManager = audio.GetComponent<NeurosisAudioManager> ();
 	}
 	
 	// Update is called once per frame
@@ -21,7 +24,10 @@ public class Scares : MonoBehaviour {
 	}
 	
 	//	make the little girl appear
-	public void Appear(){
+	public void Appear(bool stairs){
+		if (stairs) {
+			audioManager.Play (31);
+		}
 			girl.SetActive (true);	
 			girl.animation.Play ("Take 0012");
 			
@@ -29,13 +35,13 @@ public class Scares : MonoBehaviour {
 
 	//function for a jumpscare girl
 	public void ScareMe(Transform pos){
+			audioManager.Play (27);
 			girl.transform.parent = pos;
 			girl.transform.localPosition = new Vector3 (0f, 0f, 1.2f);
 			//print ("player position " + pos.position);
 			//print ("girl position " + girl.transform.position);
 			girl.SetActive (true);
-			girl.animation.Play ("Take 001");
-			Invoke ("Dissapear", .3f);
+			Invoke ("Dissapear", .5f);
 		
 	}
 
@@ -57,6 +63,7 @@ public class Scares : MonoBehaviour {
 	//function for ball
 	public void Ball(){
 		//girl is now a ball
+		audioManager.Play (30);
 		isBall = true;
 		girl.SetActive (true);
 		timeTakenDuringLerp = 7f;
@@ -69,6 +76,7 @@ public class Scares : MonoBehaviour {
 	}
 	//function for a running away girl
 	public void SlidingGirl(){
+		audioManager.Play (28);
 		girl.animation.Play ("Take 0011");
 		timeTakenDuringLerp = 0.5f;
 		_isLerping = true;
@@ -83,6 +91,7 @@ public class Scares : MonoBehaviour {
 	
 	//function for a running through walls girl
 	public void RunThroughGirl(){
+		audioManager.Play (29);
 		girl.SetActive (true);
 		girl.animation.Play ("Take 0011");
 		timeTakenDuringLerp = 0.5f;
@@ -125,8 +134,10 @@ public class Scares : MonoBehaviour {
 			if(percentageComplete >= 1.0f)
 			{
 				_isLerping = false;
-				girl.SetActive(false);
-				
+				if(!isBall){
+					girl.SetActive(false);
+				}
+				isBall=false;
 			}
 		}
 	}
