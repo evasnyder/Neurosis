@@ -25,6 +25,9 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject thirdTape;
 	PaperPickUp tapePickUp3;
 
+	public GameObject fourthTape;
+	PaperPickUp tapePickUp4;
+
 	bool banged;
 	bool paperSound = false;
 	bool paperSound2 = false;
@@ -42,11 +45,13 @@ public class PlayAudio : MonoBehaviour {
 	float firstTapeTimer = 16.6f;
 	public float secondTapeTimer = 20.5f;
 	float thirdTapeTimer = 18.5f;
+	float fourthTapeTimer = 25.5f;
 	float tapePause = 1.0f; //time for pressing the button on the cassette before audio starts
 
 	int tapeOneLoc;
 	int tapeTwoLoc;
 	int tapeThreeLoc;
+	int tapeFourLoc;
 
 	bool placed = false;
 
@@ -79,6 +84,7 @@ public class PlayAudio : MonoBehaviour {
 		tapePickup = firstTape.GetComponent<PaperPickUp> ();
 		tapePickUp2 = secondTape.GetComponent<PaperPickUp> ();
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
+		tapePickUp4 = fourthTape.GetComponent<PaperPickUp> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
         
@@ -134,6 +140,10 @@ public class PlayAudio : MonoBehaviour {
 			handAppear (thirdTapeTimer, 26);
             thirdTapeTimer-=Time.deltaTime;
    }
+		if (tapePickUp4.pickedUp == true) {
+			handAppear (fourthTapeTimer, 31);
+			fourthTapeTimer-=Time.deltaTime;
+		}
 
 	}
     
@@ -209,7 +219,8 @@ void knocking(){
 
 	void handLeaving(){
 		handUp = false;
-		if (hand.transform.localPosition.x < 2.12f) {
+		hand.transform.localPosition = new Vector3 (2.12f,-3.96f,.65f);
+		/*if (hand.transform.localPosition.x < 2.12f) {
 			Vector3 temp = hand.transform.localPosition;
 			temp.x+=.1f;
 			hand.transform.localPosition = temp;
@@ -220,7 +231,7 @@ void knocking(){
 			temp.x-=.1f;
 			hand.transform.localPosition = temp;
 
-		}
+		}*/
 	}
 
 
