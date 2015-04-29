@@ -25,8 +25,8 @@ public class Scares : MonoBehaviour {
 	
 	//	make the little girl appear
 	public void Appear(bool stairs){
-		if (stairs) {
-			audioManager.Play (31);
+		if (stairs) { //this is called when the girl appears on the stairs
+			audioManager.Play (9);//play ring around the rosie
 		}
 			girl.SetActive (true);	
 			girl.animation.Play ("Take 0012");
