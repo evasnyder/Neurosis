@@ -44,6 +44,7 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject hand;
 	public GameObject player;
 	public GameObject camera;
+	public GameObject DoubleDoorShake;
 
 	float firstTapeTimer = 16.6f;
 	public float secondTapeTimer = 20.5f;
@@ -149,11 +150,16 @@ public class PlayAudio : MonoBehaviour {
 			fourthTapeTimer-=Time.deltaTime;
 		}
 
-		if (opener.doorLocked == false) {
+		if (opener.doorLocked == true) {
 			Debug.Log ("wiggle wiggle");
 			audioManager.Play (32);
 			opener.doorLocked = true;
 		}
+
+		/*???
+		 * if (Vector3.Distance (player.transform.position, DoubleDoorShake.transform.position) < 3) {
+			audioManager.Play (34);
+		}*/
 
 		if (movingwall.triggered == true && movingwall.alreadyTriggered == false) {
 			audioManager.Play (33);
