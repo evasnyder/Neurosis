@@ -39,19 +39,28 @@ public class DoorLock : MonoBehaviour {
 			// Enable fog
 			RenderSettings.fog = true;
 		}
-		Lock ();
+		//Lock ();
 	}
 	
-	IEnumerator OnTriggerEnter (Collider other){
+	void OnTriggerEnter (Collider other){
 		if((other.collider.name == "OVRPlayerController")){
+
+			if(paperPickUp.pickedUp) {
+				doorLock.SetActive (false);
+				Debug.Log ("THE DOOR SHOULD BE UNLOCKED NOW");
+			}
+			else {
+				print ("The door is locked");
+			}
+
 			audioManager.Play (1);
 			doorHit = true;
 			print ("open door");
 			door.animation ["Take 001"].speed = 1;
 			door.animation.Play ("Take 001");
 			fogOn = true;
-			
-			yield return new WaitForSeconds(5);
+		
+			//yield return new WaitForSeconds(5);
 			
 			/*print ("close door");
 			door.animation ["Take 001"].speed = -1;    
@@ -76,12 +85,6 @@ public class DoorLock : MonoBehaviour {
 	}
 
 	void Lock(){
-		if (cameraCollide.inRoomOne) {
-			Debug.Log ("IN ROOM ONE IS NOW TRUE");
-		}
-		if (paperPickUp.pickedUp) {
-			Debug.Log ("PICKED UP I SNOW TURE");
-		}
 		if (cameraCollide.inRoomOne && paperPickUp.pickedUp) {
 			doorLock.SetActive (false);
 			Debug.Log ("THE DOOR SHOULD BE UNLOCKED NOW");

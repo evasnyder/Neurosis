@@ -17,6 +17,7 @@ public class firstDoorToOpen : MonoBehaviour {
 	public PaperPickUp cassetteplayer;
 
 	public bool doorLocked = true;
+	public bool doorUnlocked = false;
 	
 	// Use this for initialization
 	void Start () {
@@ -35,7 +36,7 @@ public class firstDoorToOpen : MonoBehaviour {
 	}
 	
 	IEnumerator OnTriggerEnter (Collider other){
-		if ((other.collider.name == "OVRPlayerController") & (cassette.pickedUp) & (cassetteplayer.pickedUp)) {
+		if ((other.collider.name == "OVRPlayerController") & doorUnlocked) {
 			audioManager.Play (1);
 			doorHit = true;
 			doorLock.SetActive (false);

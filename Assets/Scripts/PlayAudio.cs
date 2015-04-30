@@ -31,6 +31,9 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject wall;
 	movingWall movingwall;
 
+	public GameObject firstDoor;
+	firstDoorToOpen firstdoor;
+
 	bool banged;
 	bool paperSound = false;
 	bool paperSound2 = false;
@@ -90,6 +93,7 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		tapePickUp4 = fourthTape.GetComponent<PaperPickUp> ();
 		movingwall = wall.GetComponent<movingWall> ();
+		firstdoor = firstDoor.GetComponent<firstDoorToOpen> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
         
@@ -132,6 +136,7 @@ public class PlayAudio : MonoBehaviour {
         }
 
 		if (tapePlayerPickup.pickedUp == true && tapePickup.pickedUp == true) {
+			firstdoor.doorUnlocked = true;
 			handAppear (firstTapeTimer, 24);
 			firstTapeTimer-=Time.deltaTime;
 			}
