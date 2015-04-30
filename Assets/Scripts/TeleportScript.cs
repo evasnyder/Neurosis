@@ -23,7 +23,6 @@ public class TeleportScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		if (player.transform.position.x > -23f && player.transform.position.x < -7f &&
 		    player.transform.position.z > - 53f && player.transform.position.z < -52f &&
 		    goneLeft == false) {

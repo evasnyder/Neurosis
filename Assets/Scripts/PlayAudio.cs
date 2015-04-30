@@ -28,9 +28,6 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject fourthTape;
 	PaperPickUp tapePickUp4;
 
-	public GameObject wall;
-	movingWall movingwall;
-
 	public GameObject firstDoor;
 	firstDoorToOpen firstdoor;
 
@@ -47,7 +44,6 @@ public class PlayAudio : MonoBehaviour {
 	public GameObject hand;
 	public GameObject player;
 	public GameObject camera;
-	public GameObject DoubleDoorShake;
 
 	float firstTapeTimer = 16.6f;
 	public float secondTapeTimer = 20.5f;
@@ -92,7 +88,6 @@ public class PlayAudio : MonoBehaviour {
 		tapePickUp2 = secondTape.GetComponent<PaperPickUp> ();
 		tapePickUp3 = thirdTape.GetComponent<PaperPickUp> ();
 		tapePickUp4 = fourthTape.GetComponent<PaperPickUp> ();
-		movingwall = wall.GetComponent<movingWall> ();
 		firstdoor = firstDoor.GetComponent<firstDoorToOpen> ();
 		//pickPaper2 = paper2.GetComponent<Room1PickUp>();
 		audioManager.SetPriority (11, 0);
@@ -160,15 +155,6 @@ public class PlayAudio : MonoBehaviour {
 			opener.doorLocked = true;
 		}
 
-		/*???
-		 * if (Vector3.Distance (player.transform.position, DoubleDoorShake.transform.position) < 3) {
-			audioManager.Play (34);
-		}*/
-
-		/*if (movingwall.triggered == true && movingwall.alreadyTriggered == false) {
-			audioManager.Play (33);
-		}*/
-
 	}
     
 void knocking(){
@@ -188,7 +174,6 @@ void knocking(){
 	void handAppear(float timer,int track){
 		if (timer > 0) {
 			handComing ();
-			Debug.Log ("Hand is now approaching");
 			if(handUp){
 			if (timer > 13) {
 					if(tapePause >0){

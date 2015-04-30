@@ -97,9 +97,9 @@ public class CameraCollide : MonoBehaviour {
 
 	void OnTriggerStay(Collider player){
 		if (gameObject.name == "Wall_Plain_StairsScare" && player.collider.name == "OVRPlayerController"){
-			print("girl appears on stairs");
 			if (hasScares) {
 				if (stairs_Trig==false) {
+					print("girl appears on stairs");
 					//call Appear from JUMPSCARES.CS to make the scary object appear 
 					scareToPerform.Appear(true);
 					stairs_Trig=true;

@@ -8,9 +8,12 @@ public class wallsBlood : MonoBehaviour {
 	int maxTextures;
 	bool blood;
 	bool calledOnce;
+	public GameObject audio;
+	NeurosisAudioManager audioManager;
 
 	void Start ()
 	{
+		audioManager = audio.GetComponent<NeurosisAudioManager> ();
 		maxTextures = myTextures.Length-1;
 		blood = false;
 		calledOnce = false;
@@ -62,6 +65,7 @@ public class wallsBlood : MonoBehaviour {
 	{
 		if (gameObject.name == "Wall_Plain_Blood" && info.collider.name == "OVRPlayerController") { 
 			print("textures should change");
+			audioManager.Play (10);//blood splat
 			blood =true;
 		}
 	}
