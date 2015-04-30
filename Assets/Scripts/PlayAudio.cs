@@ -114,7 +114,7 @@ public class PlayAudio : MonoBehaviour {
        // knocking();
         
 		if (cameraCollide.inTheHall == true) {
-			audioManager.PlayLoop (11);
+			audioManager.FadeOut (11);
 			audioManager.FadeOut (8);
             audioManager.FadeIn (7);
            // audioManager.FadeIn (8);
