@@ -156,7 +156,6 @@ public class PlayAudio : MonoBehaviour {
 		}
 
 		if (opener.doorLocked == true) {
-			Debug.Log ("wiggle wiggle");
 			audioManager.Play (32);
 			opener.doorLocked = true;
 		}
