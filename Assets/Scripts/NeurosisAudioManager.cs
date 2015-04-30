@@ -67,6 +67,7 @@ public class NeurosisAudioManager : MonoBehaviour {
 		audioSourceArray[i].Pause ();
 	}
 	
+
 	public void Stop(int i){
 		audioSourceArray[i].Stop ();
 	}

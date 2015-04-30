@@ -47,7 +47,7 @@ public class axFly : MonoBehaviour {
 	
 	void OnCollisionEnter(Collision collide)
 	{    
-		if(collide.collider.gameObject.name == "Wall_Moving")        
+		if(collide.collider.gameObject.name == "Wall_Moving" && follow == false)        
 		{
 			var joint = gameObject.AddComponent<FixedJoint>(); joint.connectedBody = collide.rigidbody; 
 			follow = true;

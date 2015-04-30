@@ -166,9 +166,9 @@ public class PlayAudio : MonoBehaviour {
 			audioManager.Play (34);
 		}*/
 
-		if (movingwall.triggered == true && movingwall.alreadyTriggered == false) {
+		/*if (movingwall.triggered == true && movingwall.alreadyTriggered == false) {
 			audioManager.Play (33);
-		}
+		}*/
 
 	}
     

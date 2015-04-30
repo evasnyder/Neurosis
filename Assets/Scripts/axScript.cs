@@ -25,7 +25,7 @@ public class axScript : MonoBehaviour {
 
 		if (!triggered) {
 
-			Instantiate (axPrefab, startPos, Quaternion.identity);
+			Instantiate (axPrefab, startPos, Quaternion.Euler(new Vector3(0,90,0)));
 
 			triggered = true;
 
