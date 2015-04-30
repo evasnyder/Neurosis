@@ -60,6 +60,7 @@ public class movingWall : MonoBehaviour {
 		if (gameObject.name == "Radiator2Floor" && info.collider.name == "OVRPlayerController") { 
 		print ("stairs shut down");
 			wallToMove.active = true;
+			audioManager.Play (23);
 
 		}
 		if (gameObject.name == "HangingLight_MoveWall" && info.collider.name == "OVRPlayerController") { 
