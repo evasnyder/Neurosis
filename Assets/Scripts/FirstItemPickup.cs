@@ -21,6 +21,9 @@ public class FirstItemPickup : MonoBehaviour {
 				pickedUp = true;
 			}
 		}
+		if (pickedUp) {
+			infoText.SetActive (false);
+		}
 	}
 	
 	void OnTriggerEnter(Collider info)
